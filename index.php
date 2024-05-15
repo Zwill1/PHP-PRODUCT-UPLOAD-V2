@@ -56,9 +56,9 @@
             </section>";
         }       
     ?>
-
+<?php include "assets/products-page-tags.php" ?>
+<?php include "assets/hero.php" ?>
 <div class="container">
-    <?php include "assets/hero.php" ?>
     <section class="row mt-5 mb-2">
         <h1 class="fw-bold text-center">Shop Your Favorite Products</h1>
     </section>

@@ -1,3 +1,5 @@
-<section class="row mt-5 mb-2">
-    <p>hero</p>
+<section class="container-fluid">
+    <div class="row">
+        <img src="https://placehold.co/1900x600" class="img-fluid p-0" alt="...">
+    </div>
 </section>
