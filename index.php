@@ -56,7 +56,6 @@
             </section>";
         }       
     ?>
-<?php include "assets/products-page-tags.php" ?>
 <?php include "assets/hero.php" ?>
 <div class="container">
     <section class="row mt-5 mb-2">
