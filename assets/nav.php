@@ -45,5 +45,5 @@ $GLOBAL_URL = $_SERVER['REQUEST_URI'];
       </div>
     </div>
   </nav>
-  <?php include "products-page-tags.php" ?>
+  <!-- -->
 </div>

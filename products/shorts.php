@@ -1,5 +1,6 @@
 <?php include "../db/dbcon.php" ?>
 <?php include "../assets/header.php" ?>
+<?php include "../assets/products-page-tags.php" ?>
 <?php include "../assets/hero.php" ?>
 
 <div class="container">

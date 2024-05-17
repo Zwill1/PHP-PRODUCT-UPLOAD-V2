@@ -27,10 +27,11 @@
         $pprice = $_POST["pprice"];
         $pquantity = $_POST["pquantity"];
         $pimage = $_POST["pimage"];
+        $ptag = $_POST["ptags"];
         $pshortdescription = $_POST["pshortdescription"];
         $plongdescription = $_POST["plongdescription"];
 
-        $query = "update `products` set `prodname` = '$pname', `prodbrand` = '$pbrand', `prodprice` = '$pprice', `prodquantity` = '$pquantity', `prodimage` = '$pimage', `prodshortdescription` = '$pshortdescription', `prodlongdescription` = '$plongdescription' where `prodid` = '$id'";
+        $query = "update `products` set `prodname` = '$pname', `prodbrand` = '$pbrand', `prodprice` = '$pprice', `prodquantity` = '$pquantity', `prodimage` = '$pimage', `prodtag` = '$ptag', `prodshortdescription` = '$pshortdescription', `prodlongdescription` = '$plongdescription' where `prodid` = '$id'";
 
         $result = mysqli_query($connection, $query);
 
@@ -38,7 +39,7 @@
             die("Query failed" . mysqli_error($connection));
         } 
         else {
-            header("location: ../index.php?update_msg=The product has been updated.");
+            header("location:../index.php?update_msg=The product has been updated.");
         }
     }
 
@@ -68,6 +69,19 @@
         <label for="exampleInputAge">Product Image Link</label>
         <input type="text" class="form-control" id="exampleInputAge" name="pimage" value="<?php echo $row['prodimage']?>">
     </div>
+    <div class="form-group py-3">
+        <label for="exampleInputAge">Product Tag (Select one from dropdown)</label>
+        <select class="form-select" aria-label="Default select example" name="ptags">\
+            <option selected value="<?php echo $row['prodtag']?>"><?php echo $row['prodtag']?></option>
+            <option value="arrivals">New Arrivals</option>
+            <option value="shirts">Shirts</option>
+            <option value="pants">Pants</option>
+            <option value="shorts">Shorts</option>
+            <option value="shoes">Shoes</option>
+            <option value="sales">Sales</option>
+        </select>
+    </div>
+
     <div class="form-group">
         <label for="exampleInputAge">Product Short Description</label>
         <input type="text" class="form-control" id="exampleInputAge" name="pshortdescription" value="<?php echo $row['prodshortdescription']?>">

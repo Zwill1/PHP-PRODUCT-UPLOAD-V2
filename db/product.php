@@ -36,6 +36,7 @@
                 </div>
                 <p class="fw-semibold fs-2">$<?php echo $row['prodprice'] ?></p>
                 <p>Stock left: <?php echo $row['prodquantity'] ?></p>
+                <p>Product Tag: <?php echo $row['prodtag'] ?></p>
                 <p class="fw-bold">Details about this item:</p>
                 <p><?php echo $row['prodshortdescription'] ?></p>
             </div>

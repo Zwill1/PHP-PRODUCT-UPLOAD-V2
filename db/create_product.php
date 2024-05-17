@@ -9,6 +9,7 @@ if(isset($_POST["create_product"])){
     $pprice = $_POST["pprice"];
     $pquantity = $_POST["pquantity"];
     $pimage = $_POST["pimage"];
+    $ptag = $_POST["ptags"];
     $pshortdescription = $_POST["pshortdescription"];
     $plongdescription = $_POST["plongdescription"];
 
@@ -28,6 +29,9 @@ if(isset($_POST["create_product"])){
     if($pimage == "" || empty($pimage)){
         header("location:../index.php?message=You need fill in the product image link");
     } 
+    if($ptag == "" || empty($ptag)){
+        header("location:../index.php?message=You need fill in the product tag");
+    } 
     if($pshortdescription == "" || empty($pshortdescription)){
         header("location:../index.php?message=You need fill in the product short description");
     } 
@@ -35,7 +39,7 @@ if(isset($_POST["create_product"])){
         header("location:../index.php?message=You need fill in the product long description");
     } 
     else {
-        $query = "insert into `products` (`prodname`,`prodbrand`,`prodprice`,`prodquantity`, `prodimage`, `prodshortdescription`, `prodlongdescription`) values ('$pname', '$pbrand', '$pprice', '$pquantity', '$pimage', '$pshortdescription', '$plongdescription')";
+        $query = "insert into `products` (`prodname`,`prodbrand`,`prodprice`,`prodquantity`, `prodimage`, `prodtag`, `prodshortdescription`, `prodlongdescription`) values ('$pname', '$pbrand', '$pprice', '$pquantity', '$pimage', '$ptag', '$pshortdescription', '$plongdescription')";
 
         $result = mysqli_query($connection, $query);
 

@@ -1,6 +1,6 @@
 <?php include "db/dbcon.php" ?>
 <?php include "assets/header.php" ?>
-
+<?php include "assets/products-page-tags.php" ?>
     <!-- display success when inserting is done correctly -->
     <?php        
         if(isset($_GET['insert_msg'])){
@@ -193,6 +193,17 @@
                     <div class="form-group">
                         <label for="exampleInputAge">Product Image Link (Not File Upload)</label>
                         <input type="text" class="form-control" id="exampleInputAge" name="pimage">
+                    </div>
+                    <div class="form-group py-3">
+                        <label for="exampleInputAge">Product Tag (Select one from dropdown)</label>
+                        <select class="form-select" aria-label="Default select example" name="ptags">
+                            <option selected value="arrivals">New Arrivals</option>
+                            <option value="shirts">Shirts</option>
+                            <option value="pants">Pants</option>
+                            <option value="shorts">Shorts</option>
+                            <option value="shoes">Shoes</option>
+                            <option value="sales">Sales</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputAge">Product About Description (Short)</label>
