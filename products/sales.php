@@ -7,7 +7,7 @@
     <section class="row mt-5 mb-2">
         <h1 class="fw-bold text-center">Shop Products on Sale</h1>
     </section>
-    <section>
+    <section class="row">
         <?php 
         $query = "SELECT * FROM `products` WHERE prodtag = 'sales'";
 
@@ -33,8 +33,8 @@
                                     <p class="card-text mb-1 fw-bold">$<?php echo $row['prodprice']; ?></p>
                                 </div>
                                 <div class="d-flex justify-content-evenly">
-                                        <p>5 <span style="color:#ffa41c">&#9733;&#9733;&#9733;&#9733;&#9733;</span></p>
-                                        <p class="ms-3"><?php echo $row['prodreviewcount'] ?> ratings</p>
+                                    <p>5 <span style="color:#ffa41c">&#9733;&#9733;&#9733;&#9733;&#9733;</span></p>
+                                    <p class="ms-3"><?php echo $row['prodreviewcount'] ?> ratings</p>
                                 </div>
                             </div>
                         </div>
