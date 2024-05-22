@@ -44,6 +44,9 @@ $GLOBAL_URL = $_SERVER['REQUEST_URI'];
           <li class="nav-item">
             <a class="nav-link" href="http://localhost/PHP-PRODUCT-UPLOAD-v2/db/register.php">Register</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost/PHP-PRODUCT-UPLOAD-v2/db/logout.php">Log Out</a>
+          </li>
         </ul>
       </div>
     </div>
