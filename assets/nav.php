@@ -39,10 +39,10 @@ $GLOBAL_URL = $_SERVER['REQUEST_URI'];
             <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Log In</a>
+            <a class="nav-link" href="http://localhost/PHP-PRODUCT-UPLOAD-v2/db/login.php">Log In</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sign Up</a>
+            <a class="nav-link" href="http://localhost/PHP-PRODUCT-UPLOAD-v2/db/register.php">Register</a>
           </li>
         </ul>
       </div>
