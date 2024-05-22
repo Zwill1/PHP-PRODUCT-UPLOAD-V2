@@ -1,5 +1,3 @@
-<?php include "../assets/header.php" ?>
-<?php include "../assets/products-page-tags.php" ?>
 <?php
 // Database configuration
 $servername = "localhost";
@@ -39,12 +37,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $pdo->prepare("INSERT INTO users (username, email, password) VALUES (:username, :email, :password)");
     if ($stmt->execute(['username' => $username, 'email' => $email, 'password' => $hashed_password])) {
         // echo "Registration successful!";
-        header("location:../admin/account.php?acct_msg=Registration successful!");
+        header("location:../admin/account.php?reg_msg=Registration Successful!");
     } else {
         echo "Something went wrong. Please try again.";
     }
 }
 ?>
+<?php include "../assets/header.php" ?>
+<?php include "../assets/products-page-tags.php" ?>
 
 <div class="container">
     <section class="row mt-5 mb-2">

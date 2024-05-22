@@ -1,12 +1,34 @@
-<?php
-session_start();
-if (!isset($_SESSION['user_id'])) {
-    header("Location: ../db/register.php");
-    exit;
-}
-?>
+<?php include "../db/session.php" ?>
 <?php include "../assets/header.php" ?>
 <?php include "../assets/products-page-tags.php" ?>
+
+<!-- display success when registering/logging in is done correctly -->
+<?php        
+    if(isset($_GET['acct_msg'])){
+        echo 
+        "<section class='container-fluid p-0'>
+            <div class='bg-success p-2'>
+                <div class='container text-white text-center fw-bold'>
+                    <h6 class='text-center'>".$_GET['acct_msg']."</h6>
+                </div>
+            </div>
+        </section>";
+    }       
+?>
+<?php        
+    if(isset($_GET['reg_msg'])){
+        echo 
+        "<section class='container-fluid p-0'>
+            <div class='bg-success p-2'>
+                <div class='container text-white text-center fw-bold'>
+                    <h6 class='text-center'>".$_GET['reg_msg']."</h6>
+                </div>
+            </div>
+        </section>";
+    }       
+?>
+
+<!-- Set up local storage for session value and allow the nav to pick up if a session exists -->
 
 <!-- Protected content here -->
 

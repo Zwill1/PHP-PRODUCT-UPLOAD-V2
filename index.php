@@ -1,6 +1,7 @@
 <?php include "db/dbcon.php" ?>
 <?php include "assets/header.php" ?>
 <?php include "assets/products-page-tags.php" ?>
+
     <!-- display success when inserting is done correctly -->
     <?php        
         if(isset($_GET['insert_msg'])){
