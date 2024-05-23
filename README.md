@@ -13,5 +13,11 @@ Allow a product to be uploaded to a database with the following:
 - Product Long Description
 - Product Review Count (Calculate the average review score)
 
+Website will include pages to create a product, edit and update the values of a product in the database. Product pages will display all the information on the page from the database with the values from above.
 
-Website will include a page to create a product,edit and update the values of a product in the database. Product pages will display all the information on the page from the database with the values from above.
+## Features
+
+- Register users with a email, username and password that is hashed.
+- Allows Logins and Logout
+- Uses Sessions.
+- Sets log in details to local storage and deletes when logged out.
