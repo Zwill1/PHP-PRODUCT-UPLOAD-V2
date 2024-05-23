@@ -41,7 +41,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 <?php include "../assets/header.php" ?>
-<?php include "../assets/products-page-tags.php" ?>
 
 <!-- display message when logging out -->
 <?php        

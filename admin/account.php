@@ -1,6 +1,5 @@
 <?php include "../db/session.php" ?>
 <?php include "../assets/header.php" ?>
-<?php include "../assets/products-page-tags.php" ?>
 
 <!-- display success when registering/logging in is done correctly -->
 <?php        
@@ -40,4 +39,8 @@
     Password Policies: Enforce strong password policies to ensure users create strong passwords.
     Input Validation and Sanitization: Always validate and sanitize user input to prevent XSS and other injection attacks. -->
 
-<p>account</p>
+<div class="container">
+    <div class="row">
+        <p>account</p>
+    </div>
+</div>
