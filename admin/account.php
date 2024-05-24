@@ -1,4 +1,5 @@
 <?php include "../db/session.php" ?>
+<?php include "../db/dbcon-pdo.php" ?>
 <?php include "../assets/header.php" ?>
 
 <!-- display success when registering/logging in is done correctly -->
@@ -39,8 +40,72 @@
     Password Policies: Enforce strong password policies to ensure users create strong passwords.
     Input Validation and Sanitization: Always validate and sanitize user input to prevent XSS and other injection attacks. -->
 
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <p>account</p>
+        <div class="col-3">
+            <nav class="nav flex-column">
+                <a class="btn btn-secondary m-1" type="button" href="#">Add a Product</a>
+                <a class="btn btn-secondary m-1" type="button" href="#">Edit a Product</a>
+                <a class="btn btn-secondary m-1" type="button" href="#">Delete a Product</a>
+            </nav>
+        </div>
+        <div class="col-9">
+            <div class="row">
+                <!-- Display all products here with pagination -->
+                <?php 
+                
+                try {
+
+                    // Prepare the SQL query
+                    $stmt = $pdo->prepare("SELECT * FROM products");
+
+                    // Execute the query
+                    $stmt->execute();
+
+                    // Fetch the results in a while loop
+                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        // Process each row
+                        // echo "Product ID: " . $row['prodid'] . "<br>";
+                        // echo "Product Product Name: " . $row['prodname'] . "<br>";
+                        // echo "Product Price: " . $row['prodprice'] . "<br><br>";
+                        ?>
+
+                        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 p-2">
+                            <div class="card border-0 p-2 rounded-0 bg-body-secondary py-4" id="product-<?php echo $row['prodid']; ?>">
+                                <div class="d-flex justify-content-center">
+                                    <img src="<?php echo $row['prodimage']; ?>" class="card-img-top" alt="<?php echo $row['prodname']; ?>" style="width: 150px;">
+                                </div>
+                                <div class="card-body">
+                                    <div class="text-center">
+                                        <h5 class="card-title mb-1"><?php echo $row['prodname']; ?></h5>
+                                        <p class="card-text mb-1 fw-bold">$<?php echo $row['prodprice']; ?></p>
+                                    </div>
+                                    <div class="d-flex justify-content-evenly">
+                                            <p>5 <span style="color:#ffa41c">&#9733;&#9733;&#9733;&#9733;&#9733;</span></p>
+                                            <p class="ms-3"><?php echo $row['prodreviewcount'] ?> ratings</p>
+                                    </div>
+                                    <div class="col-12 pt-2 pb-2">
+                                        <a href="db/product.php?id=<?php echo $row['prodid']; ?>" class="btn btn-info w-100">Details</a>
+                                    </div>
+                                    <div class="col-12 d-flex justify-content-evenly">
+                                        <a href="db/edit_product.php?id=<?php echo $row['prodid']; ?>" class="btn btn-warning w-100 mx-1">Edit</a>
+                                        <a href="db/delete_product.php?id=<?php echo $row['prodid']; ?>" class="btn btn-danger w-100 mx-1">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                    }
+
+                } catch(PDOException $e) {
+
+                    // Handle the exception
+                    echo "Connection failed: " . $e->getMessage();
+
+                }
+
+
+                ?>            
+        </div>
     </div>
 </div>

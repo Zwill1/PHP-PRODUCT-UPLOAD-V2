@@ -53,7 +53,7 @@ $GLOBAL_URL = $_SERVER['REQUEST_URI'];
             echo '<script>';
             echo 'var username = localStorage.getItem("username");';
             echo 'if (username) {';
-            echo '    document.write("<li class=\'nav-item\'><a class=\'nav-link\' href=\'http://localhost/PHP-PRODUCT-UPLOAD-v2/db/logout.php\'>Log Out</a></li>");';
+            echo '    document.write("<li class=\'nav-item\'><a class=\'nav-link\' href=\'http://localhost/PHP-PRODUCT-UPLOAD-v2/admin/account.php\'>Account</a></li><li class=\'nav-item\'><a class=\'nav-link\' href=\'http://localhost/PHP-PRODUCT-UPLOAD-v2/db/logout.php\'>Log Out</a></li>");';
             echo '} else {';
             echo '    document.write("<li class=\'nav-item\'><a class=\'nav-link\' href=\'http://localhost/PHP-PRODUCT-UPLOAD-v2/db/login.php\'>Log In</a></li><li class=\'nav-item\'><a class=\'nav-link\' href=\'http://localhost/PHP-PRODUCT-UPLOAD-v2/db/register.php\'>Register</a></li>");';
             echo '}';
