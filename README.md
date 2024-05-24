@@ -21,3 +21,7 @@ Website will include pages to create a product, edit and update the values of a 
 - Allows Logins and Logout
 - Uses Sessions.
 - Sets log in details to local storage and deletes when logged out.
+
+## Goal
+
+- Move the Add Product, Update and Delete functionality when user is logged in.
