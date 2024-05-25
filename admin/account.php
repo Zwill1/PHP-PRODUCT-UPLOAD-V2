@@ -44,9 +44,7 @@
     <div class="row">
         <div class="col-3">
             <nav class="nav flex-column">
-                <a class="btn btn-secondary m-1" type="button" href="#">Add a Product</a>
-                <a class="btn btn-secondary m-1" type="button" href="#">Edit a Product</a>
-                <a class="btn btn-secondary m-1" type="button" href="#">Delete a Product</a>
+                <a class="btn btn-secondary m-1" type="button" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Add a Product</a>
             </nav>
         </div>
         <div class="col-9">
@@ -119,3 +117,5 @@
         </div>
     </div>
 </div>
+
+<?php include "../assets/footer.php" ?>
