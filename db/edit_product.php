@@ -1,6 +1,4 @@
 <?php include "dbcon.php" ?>
-<?php include "../assets/header.php" ?>
-
 
 <?php 
     if(isset($_GET['id'])){
@@ -45,6 +43,10 @@
 
 
 ?>
+
+<?php include "../assets/header.php" ?>
+
+
 
 <div class="container mt-3 mb-3">
 
@@ -97,4 +99,4 @@
 
 </div>
 
-<?php include("../assets/footer.php"); ?>
+<?php include "../assets/footer.php" ?>
