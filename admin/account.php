@@ -51,78 +51,69 @@
         </div>
         <div class="col-9">
             <div class="row">
-                <!-- Display all products here with pagination -->
-                <?php 
-                
-                try {
 
-                    // Prepare the SQL query
-                    $stmt = $pdo->prepare("SELECT * FROM products");
+            <?php 
+            
+                $resultsPerPage = 4;
+                $sql = 'SELECT COUNT(*) FROM products';
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute();
+                $totalResults = $stmt->fetchColumn();
+                $totalPages = ceil($totalResults / $resultsPerPage);
+                $page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
+                $startingLimit = ($page - 1) * $resultsPerPage;
 
-                    // Execute the query
-                    $stmt->execute();
+                $sql = "SELECT * FROM products LIMIT :startingLimit, :resultsPerPage";
+                $stmt = $pdo->prepare($sql);
+                $stmt->bindParam(':startingLimit', $startingLimit, PDO::PARAM_INT);
+                $stmt->bindParam(':resultsPerPage', $resultsPerPage, PDO::PARAM_INT);
+                $stmt->execute();
+                $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            
+            ?>
 
-                    // Fetch the results in a while loop
-                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                        // Process each row
-                        // echo "Product ID: " . $row['prodid'] . "<br>";
-                        // echo "Product Product Name: " . $row['prodname'] . "<br>";
-                        // echo "Product Price: " . $row['prodprice'] . "<br><br>";
-                        ?>
-
-                        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 p-2">
-                            <div class="card border-0 p-2 rounded-0 bg-body-secondary py-4" id="product-<?php echo $row['prodid']; ?>">
-                                <div class="d-flex justify-content-center">
-                                    <img src="<?php echo $row['prodimage']; ?>" class="card-img-top" alt="<?php echo $row['prodname']; ?>" style="width: 150px;">
+            <?php foreach ($results as $row): ?>
+                    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 p-2">
+                        <div class="card border-0 p-2 rounded-0 bg-body-secondary py-4" id="product-<?php echo htmlspecialchars($row['prodid']); ?>">
+                            <div class="d-flex justify-content-center">
+                                <img src="<?php echo htmlspecialchars($row['prodimage']); ?>" class="card-img-top" alt="<?php echo htmlspecialchars($row['prodname']); ?>" style="width: 150px;">
+                            </div>
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <h5 class="card-title mb-1"><?php echo htmlspecialchars($row['prodname']); ?></h5>
+                                    <p class="card-text mb-1 fw-bold">$<?php echo htmlspecialchars($row['prodprice']); ?></p>
                                 </div>
-                                <div class="card-body">
-                                    <div class="text-center">
-                                        <h5 class="card-title mb-1"><?php echo $row['prodname']; ?></h5>
-                                        <p class="card-text mb-1 fw-bold">$<?php echo $row['prodprice']; ?></p>
-                                    </div>
-                                    <div class="d-flex justify-content-evenly">
-                                            <p>5 <span style="color:#ffa41c">&#9733;&#9733;&#9733;&#9733;&#9733;</span></p>
-                                            <p class="ms-3"><?php echo $row['prodreviewcount'] ?> ratings</p>
-                                    </div>
-                                    <div class="col-12 pt-2 pb-2">
-                                        <a href="db/product.php?id=<?php echo $row['prodid']; ?>" class="btn btn-info w-100">Details</a>
-                                    </div>
-                                    <div class="col-12 d-flex justify-content-evenly">
-                                        <a href="db/edit_product.php?id=<?php echo $row['prodid']; ?>" class="btn btn-warning w-100 mx-1">Edit</a>
-                                        <a href="db/delete_product.php?id=<?php echo $row['prodid']; ?>" class="btn btn-danger w-100 mx-1">Delete</a>
-                                    </div>
+                                <div class="d-flex justify-content-evenly">
+                                        <p>5 <span style="color:#ffa41c">&#9733;&#9733;&#9733;&#9733;&#9733;</span></p>
+                                        <p class="ms-3"><?php echo htmlspecialchars($row['prodreviewcount']); ?> ratings</p>
+                                </div>
+                                <div class="col-12 pt-2 pb-2">
+                                    <a href="db/product.php?id=<?php echo htmlspecialchars($row['prodid']); ?>" class="btn btn-info w-100">Details</a>
+                                </div>
+                                <div class="col-12 d-flex justify-content-evenly">
+                                    <a href="db/edit_product.php?id=<?php echo htmlspecialchars($row['prodid']); ?>" class="btn btn-warning w-100 mx-1">Edit</a>
+                                    <a href="db/delete_product.php?id=<?php echo htmlspecialchars($row['prodid']); ?>" class="btn btn-danger w-100 mx-1">Delete</a>
                                 </div>
                             </div>
                         </div>
-                        <?php
-                    }
+                    </div>
+            <?php endforeach; ?>
 
-                } catch(PDOException $e) {
-
-                    // Handle the exception
-                    echo "Connection failed: " . $e->getMessage();
-
-                }
-
-
-                ?>            
         </div>
         <div class="row">
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
-                    <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                    </li>
+                    <?php if ($page > 1): ?>
+                        <li class="page-item"><a class="page-link" href="?page=<?php echo $page - 1; ?>">Previous</a></li>
+                    <?php endif; ?>
+                    <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+                        <li class="page-item <?php if ($page == $i) echo 'active'; ?>">
+                            <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                        </li>
+                    <?php endfor; ?>
+                    <?php if ($page < $totalPages): ?>
+                        <li class="page-item"><a class="page-link" href="?page=<?php echo $page + 1; ?>">Next</a></li>
+                    <?php endif; ?>
                 </ul>
             </nav>
         </div>
