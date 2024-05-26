@@ -90,10 +90,6 @@
                                     <div class="col-12 pt-2 pb-2">
                                         <a href="db/product.php?id=<?php echo $row['prodid']; ?>" class="btn btn-info w-100">Details</a>
                                     </div>
-                                    <div class="col-12 d-flex justify-content-evenly">
-                                        <a href="db/edit_product.php?id=<?php echo $row['prodid']; ?>" class="btn btn-warning w-100 mx-1">Edit</a>
-                                        <a href="db/delete_product.php?id=<?php echo $row['prodid']; ?>" class="btn btn-danger w-100 mx-1">Delete</a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
