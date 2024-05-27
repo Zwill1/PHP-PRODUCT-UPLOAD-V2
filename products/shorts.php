@@ -40,14 +40,13 @@
                         </div>
                     </div>
                 <?php
+                $rowCount++;
             }
 
             // Check if items with product tag were found
             if ($rowCount === 0) {
                 echo "There were no results for this product tags.";
             }
-
-            $rowCount++;
 
         }catch(PDOException $e){
             // Handle the exception

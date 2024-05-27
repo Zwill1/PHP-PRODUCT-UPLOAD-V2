@@ -39,17 +39,16 @@
                         </div>
                     </div>
                 <?php
-
-                // Check if items with product tag were found
-                if ($rowCount === 0) {
-                    echo "There were no results for this product tag.";
-                }
                 $rowCount++;
             }
-        }catch(PDOException $e){
-            // Handle the exception
-            echo "Connection failed: " . $e->getMessage();
-        }
+            // Check if items with product tag were found
+            if ($rowCount === 0) {
+                echo "There were no results for this product tag.";
+            }
+            }catch(PDOException $e){
+                // Handle the exception
+                echo "Connection failed: " . $e->getMessage();
+            }
         ?>
 
     </section>
