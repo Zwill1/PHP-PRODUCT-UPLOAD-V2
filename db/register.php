@@ -66,5 +66,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button type="submit" class="btn btn-primary">Register</button>
         </form>
     </section>
+    <script>
+        // MIDDLEWARE: Check if session data exists. if exists, move back to account page
+        if(localStorage.getItem('username' && 'user_id')) {
+            // Redirect to another page
+            window.location.replace("../admin/account.php");
+        }
+    </script>
 
 <?php include "../assets/footer.php" ?>
