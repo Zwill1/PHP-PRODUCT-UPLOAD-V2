@@ -15,6 +15,7 @@ try {
     die("Connection failed: " . $e->getMessage());
 }
 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = trim($_POST["username"]);
     $password = trim($_POST["password"]);
@@ -39,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Invalid username or password.";
     }
 }
+
 ?>
 <?php include "../assets/header.php" ?>
 
@@ -53,8 +55,19 @@ if(isset($_GET['log_msg'])){
             </div>
         </div>
     </section>";
-}       
+}
+if(isset($_GET['reg_msg'])){
+    echo 
+    "<section class='container-fluid p-0'>
+        <div class='bg-success p-2'>
+            <div class='container text-white text-center fw-bold'>
+                <h6 class='text-center'>".$_GET['reg_msg']."</h6>
+            </div>
+        </div>
+    </section>";
+}            
 ?>
+
 
 <div class="container">
     <section class="row mt-5 mb-2">

@@ -17,10 +17,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = trim($_POST["username"]);
     $email = trim($_POST["email"]);
     $password = trim($_POST["password"]);
+    $confirmpassword = trim($_POST["confirmpassword"]);
 
     // Validate input
     if (empty($username) || empty($email) || empty($password)) {
         die("Please fill in all fields.");
+    }
+
+    // Check if passwords match
+    if ($password !== $confirmpassword) {
+        die("Passwords do not match.");
     }
 
     // Check if username or email already exists
@@ -37,7 +43,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $pdo->prepare("INSERT INTO users (username, email, password) VALUES (:username, :email, :password)");
     if ($stmt->execute(['username' => $username, 'email' => $email, 'password' => $hashed_password])) {
         // echo "Registration successful!";
-        header("location:../admin/account.php?reg_msg=Registration Successful!");
+        // header("location:../admin/account.php?reg_msg=Registration Successful!");
+        header("location: login.php?reg_msg=Registration Successful!");
     } else {
         echo "Something went wrong. Please try again.";
     }
@@ -62,6 +69,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="confirmpassword" placeholder="Confirm Password" name="confirmpassword">
             </div>
             <button type="submit" class="btn btn-primary">Register</button>
         </form>
