@@ -86,6 +86,7 @@ if(isset($_GET['reg_msg'])){
             <button type="submit" class="btn btn-primary">Login</button>
         </form>
     </section>
+</div>
     <script>
         // Check if session data exists
         if(<?php echo isset($_SESSION['user_id']) ? 'true' : 'false'; ?>) {

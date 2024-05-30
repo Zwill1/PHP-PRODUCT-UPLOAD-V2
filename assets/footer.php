@@ -1,4 +1,3 @@
-    </div>
     <footer class="bg-body-tertiary pb-3 pt-3 mt-5">
         <div class="container mt-5">
             <div class="row">

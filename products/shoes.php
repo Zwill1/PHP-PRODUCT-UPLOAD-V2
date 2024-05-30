@@ -53,5 +53,6 @@
         
         ?>
     </section>
+</div>
 
 <?php include "../assets/footer.php" ?>

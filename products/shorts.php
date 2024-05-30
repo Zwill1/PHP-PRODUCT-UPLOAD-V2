@@ -1,4 +1,3 @@
-<?php include "../db/dbcon.php" ?>
 <?php include "../db/dbcon-pdo.php" ?>
 <?php include "../assets/header.php" ?>
 <?php include "../assets/hero.php" ?>
@@ -56,5 +55,6 @@
         ?>
         
     </section>
+</div>
 
 <?php include "../assets/footer.php" ?>
