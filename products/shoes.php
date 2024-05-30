@@ -34,6 +34,9 @@
                                     <p>5 <span style="color:#ffa41c">&#9733;&#9733;&#9733;&#9733;&#9733;</span></p>
                                     <p class="ms-3"><?php echo $row['prodreviewcount'] ?> ratings</p>
                                 </div>
+                                <div class="col-12 pt-2 pb-2">
+                                    <a href="../db/product.php?id=<?php echo $row['prodid']; ?>" class="btn btn-info w-100">Details</a>
+                                </div>
                             </div>
                         </div>
                     </div>
