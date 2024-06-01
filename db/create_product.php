@@ -1,4 +1,4 @@
-<?php include "dbcon.php" ?>
+<?php include "dbcon-pdo.php" ?>
 
 <?php 
 
@@ -39,15 +39,17 @@ if(isset($_POST["create_product"])){
         header("location:../index.php?message=You need fill in the product long description");
     } 
     else {
-        $query = "insert into `products` (`prodname`,`prodbrand`,`prodprice`,`prodquantity`, `prodimage`, `prodtag`, `prodshortdescription`, `prodlongdescription`) values ('$pname', '$pbrand', '$pprice', '$pquantity', '$pimage', '$ptag', '$pshortdescription', '$plongdescription')";
 
-        $result = mysqli_query($connection, $query);
+        $query = "insert into `products` (`prodname`,`prodbrand`,`prodprice`,`prodquantity`, `prodimage`, `prodtag`, `prodshortdescription`, `prodlongdescription`) values (:pname, :pbrand, :pprice, :pquantity, :pimage, :ptag, :pshortdescription, :plongdescription)";
 
-        if(!$result){
-            die("Query Failed".mysqli_error($connection));
-        }else{
+        $stmt = $pdo->prepare($query);
+        if($stmt->execute(['pname' => $pname,'pbrand' => $pbrand, 'pprice' => $pprice, 'pquantity' => $pquantity, 'pimage' => $pimage, 'ptag' => $ptag, 'pshortdescription' => $pshortdescription, 'plongdescription' => $plongdescription,])){
+
             // Redirects to index page with row data
             header("location:../index.php?insert_msg=The product has been added to the database.");
+
+        }else {
+            echo "Something went wrong. Please try again.";
         }
     }
 
