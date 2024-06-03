@@ -1,19 +1,18 @@
-<?php include "dbcon.php" ?>
+<?php include "dbcon-pdo.php" ?>
 
 <?php 
     if(isset($_GET['id'])){
         $id = $_GET['id'];
-            
-        $query = "SELECT * FROM `products` where `prodid` = '$id'";
 
-        $result = mysqli_query($connection, $query);
-
-        if(!$result) {
-            die("Query failed" . mysqli_error($connection));
+        $query = "SELECT * FROM `products` where `prodid` = :id";
+        $stmt = $pdo->prepare($query);
+        
+        if($stmt->execute(['id' => $id])){
+            $row = $stmt->fetch();
+        }else{
+            die("Query failed: No results found");
         }
-        else {
-            $row = mysqli_fetch_assoc($result);
-    }
+            
 }
 ?>
 
@@ -29,15 +28,23 @@
         $pshortdescription = $_POST["pshortdescription"];
         $plongdescription = $_POST["plongdescription"];
 
-        $query = "update `products` set `prodname` = '$pname', `prodbrand` = '$pbrand', `prodprice` = '$pprice', `prodquantity` = '$pquantity', `prodimage` = '$pimage', `prodtag` = '$ptag', `prodshortdescription` = '$pshortdescription', `prodlongdescription` = '$plongdescription' where `prodid` = '$id'";
+        $query = "update `products` set `prodname` = :pname, `prodbrand` = :pbrand, `prodprice` = :pprice, `prodquantity` = :pquantity, `prodimage` = :pimage, `prodtag` = :ptag, `prodshortdescription` = :pshortdescription, `prodlongdescription` = :plongdescription where `prodid` = :id";
 
-        $result = mysqli_query($connection, $query);
+        $stmt = $pdo->prepare($query);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':pname', $pname, PDO::PARAM_STR);
+        $stmt->bindParam(':pbrand', $pbrand, PDO::PARAM_STR);
+        $stmt->bindParam(':pprice', $pprice, PDO::PARAM_STR);
+        $stmt->bindParam(':pquantity', $pquantity, PDO::PARAM_INT);
+        $stmt->bindParam(':pimage', $pimage, PDO::PARAM_STR);
+        $stmt->bindParam(':ptag', $ptag, PDO::PARAM_STR);
+        $stmt->bindParam(':pshortdescription', $pshortdescription, PDO::PARAM_STR);
+        $stmt->bindParam(':plongdescription', $plongdescription, PDO::PARAM_STR);
 
-        if(!$result) {
-            die("Query failed" . mysqli_error($connection));
-        } 
-        else {
+        if($stmt->execute(['id' => $id,'pname' => $pname, 'pbrand' => $pbrand, 'pprice' => $pprice, 'pquantity' => $pquantity, 'pimage' => $pimage, 'ptag' => $ptag, 'pshortdescription' => $pshortdescription, 'plongdescription' => $plongdescription])){
             header("location:../index.php?update_msg=The product has been updated.");
+        }else {
+            echo "Something went wrong. Please try again.";
         }
     }
 
