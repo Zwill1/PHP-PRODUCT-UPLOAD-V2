@@ -19,7 +19,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Check if username or email already exists
     $stmt = $pdo->prepare("SELECT id FROM users WHERE username = :username OR email = :email");
-    $stmt->execute(['username' => $username, 'email' => $email]);
+    // Using BindParam for more security
+    $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+    $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+    $stmt->execute();
+
+    // $stmt->execute(['username' => $username, 'email' => $email]);
     if ($stmt->fetch()) {
         die("Username or email already taken.");
     }
@@ -29,7 +34,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Insert user into database
     $stmt = $pdo->prepare("INSERT INTO users (username, email, password) VALUES (:username, :email, :password)");
-    if ($stmt->execute(['username' => $username, 'email' => $email, 'password' => $hashed_password])) {
+    // Using BindParam for more security
+    $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+    $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+    $stmt->bindParam(':password', $hashed_password, PDO::PARAM_STR);
+
+    // if ($stmt->execute(['username' => $username, 'email' => $email, 'password' => $hashed_password])) 
+    
+    if ($stmt->execute(['username' => $username, 'email' => $email, 'password' => $hashed_password])){
         // echo "Registration successful!";
         // header("location:../admin/account.php?reg_msg=Registration Successful!");
         header("location: login.php?reg_msg=Registration Successful!");
