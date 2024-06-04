@@ -13,7 +13,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Fetch user from database
     $stmt = $pdo->prepare("SELECT id, username, password FROM users WHERE username = :username");
-    $stmt->execute(['username' => $username]);
+    // Using BindParam for more security
+    $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+    $stmt->execute();
+    // $stmt->execute(['username' => $username]);
     $user = $stmt->fetch();
 
     if ($user && password_verify($password, $user['password'])) {
