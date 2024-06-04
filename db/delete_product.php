@@ -10,7 +10,7 @@ if(isset($_GET['id'])){
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 
-    if($stmt->execute(['id' => $id])){
+    if($stmt->execute()){
         header("location:../index.php?delete_msg=The product has been deleted to the database.");
     }else{
         echo "Something went wrong. Please try again.";
