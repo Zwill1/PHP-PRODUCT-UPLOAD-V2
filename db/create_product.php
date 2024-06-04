@@ -43,7 +43,17 @@ if(isset($_POST["create_product"])){
         $query = "insert into `products` (`prodname`,`prodbrand`,`prodprice`,`prodquantity`, `prodimage`, `prodtag`, `prodshortdescription`, `prodlongdescription`) values (:pname, :pbrand, :pprice, :pquantity, :pimage, :ptag, :pshortdescription, :plongdescription)";
 
         $stmt = $pdo->prepare($query);
-        if($stmt->execute(['pname' => $pname,'pbrand' => $pbrand, 'pprice' => $pprice, 'pquantity' => $pquantity, 'pimage' => $pimage, 'ptag' => $ptag, 'pshortdescription' => $pshortdescription, 'plongdescription' => $plongdescription,])){
+        // Using BindParam for more security
+        $stmt->bindParam(':pname', $pname, PDO::PARAM_STR);
+        $stmt->bindParam(':pbrand', $pbrand, PDO::PARAM_STR);
+        $stmt->bindParam(':pprice', $pprice, PDO::PARAM_STR);
+        $stmt->bindParam(':pquantity', $pquantity, PDO::PARAM_INT);
+        $stmt->bindParam(':pimage', $pimage, PDO::PARAM_STR);
+        $stmt->bindParam(':ptag', $ptag, PDO::PARAM_STR);
+        $stmt->bindParam(':pshortdescription', $pshortdescription, PDO::PARAM_STR);
+        $stmt->bindParam(':plongdescription', $plongdescription, PDO::PARAM_STR);
+
+        if($stmt->execute()){
 
             // Redirects to index page with row data
             header("location:../index.php?insert_msg=The product has been added to the database.");
