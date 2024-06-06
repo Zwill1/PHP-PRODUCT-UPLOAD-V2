@@ -25,21 +25,21 @@
             while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                 ?>
                     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 p-2">
-                        <div class="card border-0 p-2 rounded-0 bg-body-secondary py-4" id="product-<?php echo $row['prodid']; ?>">
+                        <div class="card border-0 p-2 rounded-0 bg-body-secondary py-4" id="product-<?php echo htmlspecialchars($row['prodid']); ?>">
                             <div class="d-flex justify-content-center">
-                                <img src="<?php echo $row['prodimage']; ?>" class="card-img-top" alt="<?php echo $row['prodname']; ?>" style="width: 150px;">
+                                <img src="<?php echo htmlspecialchars($row['prodimage']); ?>" class="card-img-top" alt="<?php echo htmlspecialchars($row['prodname']); ?>" style="width: 150px;">
                             </div>
                             <div class="card-body">
                                 <div class="text-center">
-                                    <h5 class="card-title mb-1"><?php echo $row['prodname']; ?></h5>
-                                    <p class="card-text mb-1 fw-bold">$<?php echo $row['prodprice']; ?></p>
+                                    <h5 class="card-title mb-1"><?php echo htmlspecialchars($row['prodname']); ?></h5>
+                                    <p class="card-text mb-1 fw-bold">$<?php echo htmlspecialchars($row['prodprice']); ?></p>
                                 </div>
                                 <div class="d-flex justify-content-evenly">
                                     <p>5 <span style="color:#ffa41c">&#9733;&#9733;&#9733;&#9733;&#9733;</span></p>
-                                    <p class="ms-3"><?php echo $row['prodreviewcount'] ?> ratings</p>
+                                    <p class="ms-3"><?php echo htmlspecialchars($row['prodreviewcount']); ?> ratings</p>
                                 </div>
                                 <div class="col-12 pt-2 pb-2">
-                                    <a href="../db/product.php?id=<?php echo $row['prodid']; ?>" class="btn btn-info w-100">Details</a>
+                                    <a href="../db/product.php?id=<?php echo htmlspecialchars($row['prodid']); ?>" class="btn btn-info w-100">Details</a>
                                 </div>
                             </div>
                         </div>
