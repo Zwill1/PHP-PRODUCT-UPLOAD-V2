@@ -9,8 +9,11 @@
     <section class="row">
         <?php 
 
-        $sql = "SELECT * FROM `products` WHERE prodtag = 'arrivals'";
+        $arrivals = 'arrivals';
+
+        $sql = "SELECT * FROM `products` WHERE prodtag = :arrivals";
         $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':arrivals', $arrivals, PDO::PARAM_STR);
         $stmt->execute();
 
         // Counter to track number of rows fetched to display that none were found

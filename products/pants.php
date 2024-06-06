@@ -10,8 +10,11 @@
 
         <?php 
         
-        $sql = "SELECT * FROM `products` WHERE prodtag = 'pants'";
+        $pants = 'pants';
+
+        $sql = "SELECT * FROM `products` WHERE prodtag = :pants";
         $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':pants', $pants, PDO::PARAM_STR);
         $stmt->execute();
 
         // Counter to track number of rows fetched to display that none were found
