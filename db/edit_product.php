@@ -60,28 +60,28 @@
 <form action="edit_product.php?id=<?php echo $id; ?>" method="POST">
     <div class="form-group">
         <label for="exampleInputFistName">Product Name</label>
-        <input type="text" class="form-control" id="exampleInputFistName" name="pname" value="<?php echo $row['prodname']?>">
+        <input type="text" class="form-control" id="exampleInputFistName" name="pname" value="<?php echo htmlspecialchars($row['prodname']); ?>">
     </div>
     <div class="form-group">
         <label for="exampleInputFistName">Product Brand</label>
-        <input type="text" class="form-control" id="exampleInputFistName" name="pbrand" value="<?php echo $row['prodbrand']?>">
+        <input type="text" class="form-control" id="exampleInputFistName" name="pbrand" value="<?php echo htmlspecialchars($row['prodbrand']); ?>">
     </div>
     <div class="form-group">
         <label for="exampleInputLastName">Product Price</label>
-        <input type="text" class="form-control" id="exampleInputLastName" name="pprice" value="<?php echo $row['prodprice']?>">
+        <input type="text" class="form-control" id="exampleInputLastName" name="pprice" value="<?php echo htmlspecialchars($row['prodprice']); ?>">
     </div>
     <div class="form-group">
         <label for="exampleInputAge">Product Quantity</label>
-        <input type="text" class="form-control" id="exampleInputAge" name="pquantity" value="<?php echo $row['prodquantity']?>">
+        <input type="text" class="form-control" id="exampleInputAge" name="pquantity" value="<?php echo htmlspecialchars($row['prodquantity']); ?>">
     </div>
     <div class="form-group">
         <label for="exampleInputAge">Product Image Link</label>
-        <input type="text" class="form-control" id="exampleInputAge" name="pimage" value="<?php echo $row['prodimage']?>">
+        <input type="text" class="form-control" id="exampleInputAge" name="pimage" value="<?php echo htmlspecialchars($row['prodimage']); ?>">
     </div>
     <div class="form-group py-3">
         <label for="exampleInputAge">Product Tag (Select one from dropdown)</label>
         <select class="form-select" aria-label="Default select example" name="ptags">\
-            <option selected value="<?php echo $row['prodtag']?>"><?php echo $row['prodtag']?></option>
+            <option selected value="<?php echo htmlspecialchars($row['prodtag']); ?>"><?php echo htmlspecialchars($row['prodtag']); ?></option>
             <option value="arrivals">New Arrivals</option>
             <option value="shirts">Shirts</option>
             <option value="pants">Pants</option>
@@ -93,11 +93,11 @@
 
     <div class="form-group">
         <label for="exampleInputAge">Product Short Description</label>
-        <input type="text" class="form-control" id="exampleInputAge" name="pshortdescription" value="<?php echo $row['prodshortdescription']?>">
+        <input type="text" class="form-control" id="exampleInputAge" name="pshortdescription" value="<?php echo htmlspecialchars($row['prodshortdescription']); ?>">
     </div>
     <div class="form-group">
         <label for="exampleInputAge">Product Long Description</label>
-        <textarea type="text" class="form-control" id="exampleInputAge" name="plongdescription"><?php echo $row['prodlongdescription']?></textarea> 
+        <textarea type="text" class="form-control" id="exampleInputAge" name="plongdescription"><?php echo htmlspecialchars($row['prodlongdescription']); ?></textarea> 
     </div>
     <div class="form-group mt-3">
         <input type="submit" class="btn btn-success" name="update_product" value="Update" />
