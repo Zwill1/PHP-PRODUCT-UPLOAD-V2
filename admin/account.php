@@ -15,13 +15,15 @@
         </section>";
     }       
 ?>
+
+<!-- display message when validating new product is done incorrectly -->
 <?php        
-    if(isset($_GET['reg_msg'])){
+    if(isset($_GET['message'])){
         echo 
         "<section class='container-fluid p-0'>
-            <div class='bg-success p-2'>
+            <div class='bg-danger p-2'>
                 <div class='container text-white text-center fw-bold'>
-                    <h6 class='text-center'>".$_GET['reg_msg']."</h6>
+                    <h6 class='text-center'>".$_GET['message']."</h6>
                 </div>
             </div>
         </section>";
