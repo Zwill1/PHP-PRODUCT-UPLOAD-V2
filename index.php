@@ -43,19 +43,6 @@
         }       
     ?>
 
-    <!-- display message when validating new product is done incorrectly -->
-    <?php        
-        if(isset($_GET['message'])){
-            echo 
-            "<section class='container-fluid p-0'>
-                <div class='bg-danger p-2'>
-                    <div class='container text-white text-center fw-bold'>
-                        <h6 class='text-center'>".$_GET['message']."</h6>
-                    </div>
-                </div>
-            </section>";
-        }       
-    ?>
 <?php include "assets/hero.php" ?>
 <div class="container">
     <section class="row mt-5 mb-2">
