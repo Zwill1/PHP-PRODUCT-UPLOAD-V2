@@ -22,6 +22,11 @@ Website will include pages to create a product, edit and update the values of a 
 - Uses Sessions.
 - Sets log in details to local storage and deletes when logged out.
 
+## Security
+
+- Protection against XSS attack when displaying data on pages.
+- Uses PDO structure for data inserting and updates.
+
 ## Goal
 
 - Move the Add Product, Update and Delete functionality when user is logged in.
