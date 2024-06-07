@@ -15,28 +15,28 @@ if(isset($_POST["create_product"])){
 
     // Checks to see if name is empty as a STRING or NULL - NOT WORKING AS INTENDED JUST YET
     if($pname == "" || empty($pname)){
-        header("location:../index.php?message=You need fill in the product name");
+        header("location:../admin/account.php?message=You need fill in the product name");
     }
     if($pbrand == "" || empty($pname)){
-        header("location:../index.php?message=You need fill in the product brand");
+        header("location:../admin/account.php?message=You need fill in the product brand");
     }
     if($pprice == "" || empty($pprice)){
-        header("location:../index.php?message=You need fill in the product price");
+        header("location:../admin/account.php?message=You need fill in the product price");
     }
     if($pquantity == "" || empty($pquantity)){
-        header("location:../index.php?message=You need fill in the product quantity");
+        header("location:../admin/account.php?message=You need fill in the product quantity");
     } 
     if($pimage == "" || empty($pimage)){
-        header("location:../index.php?message=You need fill in the product image link");
+        header("location:../admin/account.php?message=You need fill in the product image link");
     } 
     if($ptag == "" || empty($ptag)){
-        header("location:../index.php?message=You need fill in the product tag");
+        header("location:../admin/account.php?message=You need fill in the product tag");
     } 
     if($pshortdescription == "" || empty($pshortdescription)){
-        header("location:../index.php?message=You need fill in the product short description");
+        header("location:../admin/account.php?message=You need fill in the product short description");
     } 
     if($plongdescription == "" || empty($plongdescription)){
-        header("location:../index.php?message=You need fill in the product long description");
+        header("location:../admin/account.php?message=You need fill in the product long description");
     } 
     else {
 
