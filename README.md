@@ -24,6 +24,14 @@ Website will include pages to create a product, edit and update the values of a 
 - Uses Sessions.
 - Sets log in details to local storage and deletes when logged out.
 
+## Registration
+
+- Following data is needed to create an account:
+    - Username
+    - Email Address
+    - Password
+    - Confirm Password
+
 ## Security
 
 - Protection against XSS attack when displaying data on pages.
