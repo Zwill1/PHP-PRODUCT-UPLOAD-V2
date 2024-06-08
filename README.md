@@ -6,9 +6,11 @@ Allow a product to be uploaded to a database with the following:
 
 - Product id
 - Product Name
+- Product Brand
 - Product Price
 - Product Quantity
 - Product Image (link to image)
+- Product Tags
 - Product Short Description
 - Product Long Description
 - Product Review Count (Calculate the average review score)
