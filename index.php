@@ -50,6 +50,18 @@
     </section>
 
     <section class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+            <div>
+                <form method="GET" action="filter.php">
+                    <input type="checkbox" name="category[]" value="electronics"> Electronics
+                    <input type="checkbox" name="category[]" value="books"> Books
+                    <input type="submit" value="Filter">
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="row">
 
     <?php 
             try {
