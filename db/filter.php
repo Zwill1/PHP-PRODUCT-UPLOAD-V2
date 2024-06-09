@@ -69,7 +69,9 @@
             }
         }
         } else {
-            echo "No categories selected.";
+            echo '<section class="row mt-5 mb-2">';
+            echo '<p class="text-center">No product categories selected.</p>';
+            echo '</section>';
         }
     ?>
 
