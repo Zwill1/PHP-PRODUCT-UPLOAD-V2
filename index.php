@@ -1,6 +1,5 @@
 <?php include "db/dbcon-pdo.php" ?>
 <?php include "assets/header.php" ?>
-<?php include "db/filter.php" ?>
 
     <!-- display success when inserting is done correctly -->
     <?php        
