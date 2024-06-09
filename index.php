@@ -1,5 +1,6 @@
 <?php include "db/dbcon-pdo.php" ?>
 <?php include "assets/header.php" ?>
+<?php include "db/filter.php" ?>
 
     <!-- display success when inserting is done correctly -->
     <?php        
@@ -49,12 +50,17 @@
         <h1 class="fw-bold text-center">Shop Your Favorite Products</h1>
     </section>
 
-    <section class="row">
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+    <section class="row mt-3 mb-3">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 w-100 text-center">
             <div>
-                <form method="GET" action="filter.php">
-                    <input type="checkbox" name="category[]" value="electronics"> Electronics
-                    <input type="checkbox" name="category[]" value="books"> Books
+                <h4>Select Product Tags:</h4>
+                <form method="GET" action="db/filter.php">
+                    <input type="checkbox" name="prodtag[]" value="arrivals"> <label for="newArrivals">New Arrivals</label>
+                    <input type="checkbox" name="prodtag[]" value="shirts"> <label for="shirts">Shirts</label>
+                    <input type="checkbox" name="prodtag[]" value="pants"> <label for="pants">Pants</label>
+                    <input type="checkbox" name="prodtag[]" value="shorts"> <label for="shorts">Shorts</label>
+                    <input type="checkbox" name="prodtag[]" value="shoes"> <label for="shoes">Shoes</label>
+                    <input type="checkbox" name="prodtag[]" value="sales"> <label for="sales">Sales</label>
                     <input type="submit" value="Filter">
                 </form>
             </div>
