@@ -23,6 +23,8 @@ Website will include pages to create a product, edit and update the values of a 
 - Allows Logins and Logout
 - Uses Sessions.
 - Sets log in details to local storage and deletes when logged out.
+- Includes an option to filter products on home page.
+- Has pagination on home page and log in page.
 
 ## Registration
 
