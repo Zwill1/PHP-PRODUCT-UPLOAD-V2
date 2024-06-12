@@ -44,12 +44,12 @@
 
 <div class="container-fluid py-5 px-0">
     <div class="row mx-0">
-        <div class="col-3">
+        <div class="col-lg-12 col-xl-3">
             <nav class="nav flex-column">
                 <a class="btn btn-secondary m-1" type="button" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Add a Product</a>
             </nav>
         </div>
-        <div class="col-9">
+        <div class="col-lg-12 col-xl-9">
             <div class="row">
 
             <?php 
@@ -73,7 +73,7 @@
             ?>
 
             <?php foreach ($results as $row): ?>
-                    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 p-0">
+                    <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 p-0">
                         <div class="border rounded-none border-8 border-solid border-gray-800 m-2">
 
                             <div class="card px-2 rounded-0 py-3 border-transparent" id="product-<?php echo htmlspecialchars($row['prodid']); ?>">
