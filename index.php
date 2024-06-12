@@ -133,7 +133,7 @@
                     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 p-2">
                         <div class="card border-0 p-2 rounded-0 bg-body-secondary py-4" id="product-<?php echo htmlspecialchars($row['prodid']); ?>">
                             <div class="d-flex justify-content-center">
-                                <img src="<?php echo htmlspecialchars($row['prodimage']); ?>" class="card-img-top" alt="<?php echo htmlspecialchars($row['prodname']); ?>" style="width: 150px;">
+                                <img src="<?php echo htmlspecialchars($row['prodimage']); ?>" class="card-img-top" alt="<?php echo htmlspecialchars($row['prodname']); ?>" style="height: 150px; width: auto;">
                             </div>
                             <div class="card-body">
                                 <div class="text-center">
