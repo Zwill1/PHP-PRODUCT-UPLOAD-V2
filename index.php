@@ -137,12 +137,14 @@
                             </div>
                             <div class="card-body">
                                 <div class="text-center">
-                                    <h5 class="card-title mb-1"><?php echo htmlspecialchars($row['prodname']); ?></h5>
-                                    <p class="card-text mb-1 fw-bold">$<?php echo htmlspecialchars($row['prodprice']); ?></p>
+                                    <h5 class="card-title mb-1 fw-bold"><?php echo htmlspecialchars($row['prodname']); ?></h5>
                                 </div>
-                                <div class="d-flex justify-content-evenly">
+                                <div class="d-flex justify-content-evenly mt-3">
                                         <p>5 <span style="color:#ffa41c">&#9733;&#9733;&#9733;&#9733;&#9733;</span></p>
                                         <p class="ms-3"><?php echo htmlspecialchars($row['prodreviewcount']); ?> ratings</p>
+                                </div>
+                                <div class="text-center"">
+                                    <p class="card-text mb-3 fw-bold fs-5">$<?php echo htmlspecialchars($row['prodprice']); ?></p>
                                 </div>
                                 <div class="col-12">
                                     <a href="db/product.php?id=<?php echo htmlspecialchars($row['prodid']); ?>" class="btn btn-info w-100">Details</a>
