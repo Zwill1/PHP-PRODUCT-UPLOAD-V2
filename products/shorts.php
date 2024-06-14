@@ -24,22 +24,26 @@
 
             while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                 ?>  
-                    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 p-2">
-                        <div class="card border-0 p-2 rounded-0 bg-body-secondary py-4" id="product-<?php echo htmlspecialchars($row['prodid']); ?>">
-                            <div class="d-flex justify-content-center">
-                                <img src="<?php echo htmlspecialchars($row['prodimage']); ?>" class="card-img-top" alt="<?php echo htmlspecialchars($row['prodname']); ?>" style="width: 150px;">
-                            </div>
-                            <div class="card-body">
-                                <div class="text-center">
-                                    <h5 class="card-title mb-1"><?php echo htmlspecialchars($row['prodname']); ?></h5>
-                                    <p class="card-text mb-1 fw-bold">$<?php echo htmlspecialchars($row['prodprice']); ?></p>
+                    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 p-0">
+                        <div class="border rounded-none border-8 border-solid border-gray-800 m-2">
+                            <div class="card px-2 rounded-0 py-3 border-transparent" id="product-<?php echo htmlspecialchars($row['prodid']); ?>">
+                                <div class="d-flex justify-content-center">
+                                    <img src="<?php echo htmlspecialchars($row['prodimage']); ?>" class="card-img-top" alt="<?php echo htmlspecialchars($row['prodname']); ?>" style="height: 150px; width: auto;">
                                 </div>
-                                <div class="d-flex justify-content-evenly">
-                                    <p>5 <span style="color:#ffa41c">&#9733;&#9733;&#9733;&#9733;&#9733;</span></p>
-                                    <p class="ms-3"><?php echo htmlspecialchars($row['prodreviewcount']); ?> ratings</p>
-                                </div>
-                                <div class="col-12 pt-2 pb-2">
-                                    <a href="../db/product.php?id=<?php echo htmlspecialchars($row['prodid']); ?>" class="btn btn-info w-100">Details</a>
+                                <div class="card-body">
+                                    <div class="text-center">
+                                        <h5 class="card-title mb-1 fw-bold"><?php echo htmlspecialchars($row['prodname']); ?></h5>
+                                    </div>
+                                    <div class="d-flex justify-content-evenly mt-3">
+                                        <p>5 <span style="color:#ffa41c">&#9733;&#9733;&#9733;&#9733;&#9733;</span></p>
+                                        <p class="ms-3"><?php echo htmlspecialchars($row['prodreviewcount']); ?> ratings</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <p class="card-text mb-3 fw-bold fs-5">$<?php echo htmlspecialchars($row['prodprice']); ?></p>
+                                    </div>
+                                    <div class="col-12">
+                                        <a href="../db/product.php?id=<?php echo htmlspecialchars($row['prodid']); ?>" class="btn btn-info w-100">Details</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
