@@ -27,7 +27,7 @@
                         <div class="border rounded-none border-8 border-solid border-gray-800 m-2">
                             <div class="card px-2 rounded-0 py-3 border-transparent" id="product-<?php echo htmlspecialchars($row['prodid']); ?>">
                                 <div class="d-flex justify-content-center">
-                                    <img src="<?php echo htmlspecialchars($row['prodimage']); ?>" class="card-img-top" alt="<?php echo htmlspecialchars($row['prodname']); ?>" style="width: 150px;">
+                                    <img src="<?php echo htmlspecialchars($row['prodimage']); ?>" class="card-img-top" alt="<?php echo htmlspecialchars($row['prodname']); ?>" style="height: 150px; width: auto;">
                                 </div>
                                 <div class="card-body">
                                     <div class="text-center">
@@ -41,7 +41,7 @@
                                         <p class="card-text mb-3 fw-bold fs-5">$<?php echo htmlspecialchars($row['prodprice']); ?></p>
                                     </div>
                                     <div class="col-12 pt-2 pb-2">
-                                        <a href="../db/product.php?id=<?php echo htmlspecialchars($row['prodid']); ?>" class="btn btn-info w-100">Details</a>
+                                        <a href="../db/product.php?id=<?php echo htmlspecialchars($row['prodid']); ?>" class="btn btn-info w-100 rounded-0">Details</a>
                                     </div>
                                 </div>
                             </div>
