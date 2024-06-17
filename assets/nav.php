@@ -22,7 +22,7 @@ $GLOBAL_URL = $_SERVER['REQUEST_URI'];
             echo '<script>';
             echo 'var username = localStorage.getItem("username");';
             echo 'if (username) {';
-            echo '    document.write("<li class=\'nav-item\'><a class=\'nav-link fw-bold\' aria-current=\'page\' href=\'#\'>Welcome " + username + "</a></li>");';
+            echo '    document.write("<li class=\'nav-item\'><a class=\'nav-link fw-bold text-primary\' aria-current=\'page\' href=\'http://localhost/PHP-PRODUCT-UPLOAD-v2/admin/account.php\'>Welcome " + username + "</a></li>");';
             echo '} else {';
             echo '    document.write("");';
             echo '}';
