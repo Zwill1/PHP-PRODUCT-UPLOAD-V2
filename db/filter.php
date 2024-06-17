@@ -39,22 +39,26 @@
 
             foreach ($products as $product) {
                 if($product['prodtag'] === $category){
-                echo '<div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 p-2">';
-                    echo '<div class="card border-0 p-2 rounded-0 bg-body-secondary py-4" id="product-' . htmlspecialchars($product['prodid']) . '">';
-                        echo '<div class="d-flex justify-content-center">';
-                            echo '<img src="' . htmlspecialchars($product['prodimage']) . '" class="card-img-top" alt="' . htmlspecialchars($product['prodname']) . '" style="width: 150px;">';
-                        echo '</div>';
-                        echo '<div class="card-body">';
-                            echo '<div class="text-center">';
-                                echo '<h5 class="card-title mb-1">' . htmlspecialchars($product['prodname']) . '</h5>';
-                                echo '<p class="card-text mb-1 fw-bold">$' . htmlspecialchars($product['prodprice']) . '</p>';
+                echo '<div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 p-0">';
+                    echo'<div class="border rounded-none border-8 border-solid border-gray-800 m-2">';
+                        echo '<div class="card px-2 rounded-0 py-3 border-transparent" id="product-' . htmlspecialchars($product['prodid']) . '">';
+                            echo '<div class="d-flex justify-content-center">';
+                                echo '<img src="' . htmlspecialchars($product['prodimage']) . '" class="card-img-top" alt="' . htmlspecialchars($product['prodname']) . '" style="height: 150px; width: auto;">';
                             echo '</div>';
-                            echo '<div class="d-flex justify-content-evenly">';
-                                    echo '<p>5 <span style="color:#ffa41c">&#9733;&#9733;&#9733;&#9733;&#9733;</span></p>';
-                                    echo '<p class="ms-3">' . htmlspecialchars($product['prodreviewcount']) .  ' ratings</p>';
-                            echo '</div>';
-                            echo '<div class="col-12 pt-2 pb-2">';
-                                echo '<a href="product.php?id=' . htmlspecialchars($product['prodid']) . '" class="btn btn-info w-100">Details</a>';
+                            echo '<div class="card-body">';
+                                echo '<div class="text-center">';
+                                    echo '<h5 class="card-title mb-1 fw-bold">' . htmlspecialchars($product['prodname']) . '</h5>';
+                                echo '</div>';
+                                echo '<div class="d-flex justify-content-evenly mt-3">';
+                                        echo '<p>5 <span style="color:#ffa41c">&#9733;&#9733;&#9733;&#9733;&#9733;</span></p>';
+                                        echo '<p class="ms-3">' . htmlspecialchars($product['prodreviewcount']) .  ' ratings</p>';
+                                echo '</div>';
+                                echo '<div class="text-center">';
+                                echo '<p class="card-text mb-3 fw-bold fs-5">$' . htmlspecialchars($product['prodprice']) . '</p>';
+                                echo '</div>';
+                                echo '<div class="col-12 pt-2 pb-2">';
+                                    echo '<a href="product.php?id=' . htmlspecialchars($product['prodid']) . '" class="btn btn-info w-100 rounded-0">Details</a>';
+                                echo '</div>';
                             echo '</div>';
                         echo '</div>';
                     echo '</div>';
