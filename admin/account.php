@@ -46,7 +46,7 @@
     <div class="row mx-0">
         <div class="col-lg-12 col-xl-3">
             <nav class="nav flex-column">
-                <a class="btn btn-secondary m-1" type="button" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Add a Product</a>
+                <a class="btn btn-secondary m-0 rounded-0" type="button" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Add a Product</a>
             </nav>
         </div>
         <div class="col-lg-12 col-xl-9">
@@ -74,7 +74,7 @@
 
             <?php foreach ($results as $row): ?>
                     <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 p-0">
-                        <div class="border rounded-none border-8 border-solid border-gray-800 m-2">
+                        <div class="border rounded-none border-8 border-solid border-gray-800 m-2 my-xl-0 mx-md-1">
 
                             <div class="card px-2 rounded-0 py-3 border-transparent" id="product-<?php echo htmlspecialchars($row['prodid']); ?>">
                                 <div class="d-flex justify-content-center">
@@ -92,11 +92,11 @@
                                         <p class="card-text mb-3 fw-bold fs-5">$<?php echo htmlspecialchars($row['prodprice']); ?></p>
                                     </div>
                                     <div class="col-12 pt-2 pb-2">
-                                        <a href="../db/product.php?id=<?php echo htmlspecialchars($row['prodid']); ?>" class="btn btn-info w-100">Details</a>
+                                        <a href="../db/product.php?id=<?php echo htmlspecialchars($row['prodid']); ?>" class="btn btn-info w-100 rounded-0">Details</a>
                                     </div>
                                     <div class="col-12 d-flex justify-content-evenly">
-                                        <a href="../db/edit_product.php?id=<?php echo htmlspecialchars($row['prodid']); ?>" class="btn btn-warning w-100 mx-1">Edit</a>
-                                        <a href="../db/delete_product.php?id=<?php echo htmlspecialchars($row['prodid']); ?>" class="btn btn-danger w-100 mx-1">Delete</a>
+                                        <a href="../db/edit_product.php?id=<?php echo htmlspecialchars($row['prodid']); ?>" class="btn btn-warning w-100 rounded-0 px-0 me-1">Edit</a>
+                                        <a href="../db/delete_product.php?id=<?php echo htmlspecialchars($row['prodid']); ?>" class="btn btn-danger w-100 rounded-0 px-0 ms-1">Delete</a>
                                     </div>
                                 </div>
                             </div>
