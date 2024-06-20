@@ -57,25 +57,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h1 class="fw-bold text-center">Register for an Account</h1>
     </section>
     <section class="row">
-        <form action="register.php" method="POST">
-            <div class="mb-3">
-                <label for="firstName" class="form-label">Username</label>
-                <input type="text" class="form-control" id="firstName" placeholder="Enter your username" name="username">
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password" name="password">
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Confirm Password</label>
-                <input type="password" class="form-control" id="confirmpassword" placeholder="Confirm Password" name="confirmpassword">
-            </div>
-            <button type="submit" class="btn btn-primary">Register</button>
-        </form>
+        <div class="col-md-6 offset-md-3">
+            <form action="register.php" method="POST">
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">Username</label>
+                    <input type="text" class="form-control rounded-0" id="firstName" placeholder="Enter your username" name="username">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control rounded-0" id="email" placeholder="name@example.com" name="email">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control rounded-0" id="password" placeholder="Enter your password" name="password">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control rounded-0" id="confirmpassword" placeholder="Confirm Password" name="confirmpassword">
+                </div>
+                <button type="submit" class="btn btn-primary w-100 rounded-0">Register</button>
+            </form>
+        </div>
     </section>
 </div>
     <script>
