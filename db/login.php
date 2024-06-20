@@ -63,17 +63,19 @@ if(isset($_GET['reg_msg'])){
         <h1 class="fw-bold text-center">Login to your Account</h1>
     </section>
     <section class="row">
-        <form action="login.php" method="POST">
-            <div class="mb-3">
-                <label for="firstName" class="form-label">Username</label>
-                <input type="text" class="form-control" id="firstName" placeholder="Enter your username" name="username">
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password" name="password">
-            </div>
-            <button type="submit" class="btn btn-primary">Login</button>
-        </form>
+        <div class="col-md-6 offset-md-3">
+            <form action="login.php" method="POST">
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">Username</label>
+                    <input type="text" class="form-control rounded-0" id="firstName" placeholder="Enter your username" name="username">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control rounded-0" id="password" placeholder="Enter your password" name="password">
+                </div>
+                <button type="submit" class="btn btn-primary w-100 rounded-0">Login</button>
+            </form>
+        </div>
     </section>
 </div>
     <script>
