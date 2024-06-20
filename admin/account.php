@@ -42,7 +42,7 @@
     Password Policies: Enforce strong password policies to ensure users create strong passwords.
     Input Validation and Sanitization: Always validate and sanitize user input to prevent XSS and other injection attacks. -->
 
-<div class="container-fluid py-5 px-0">
+<div class="container-fluid pt-5 px-0">
     <div class="row mx-0">
         <div class="col-lg-12 col-xl-3">
             <nav class="nav flex-column">
