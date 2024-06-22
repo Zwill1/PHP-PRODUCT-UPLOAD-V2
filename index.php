@@ -183,18 +183,50 @@
         </div>
     </section>
 
+</div>
+
+<div class="container-fluid">
+
     <section class="mt-5">
-        <div class="row w-full">
+        <div class="row g-0">
             <h2 class="text-center fw-bold text-3xl">Gallery</h2>
+        </div>
+        <div class="row mt-3 mx-0">
+            <div class="col-6 col-md-4 col-xl-2 px-0 img-container">
+                <img class="img-fluid" src="https://placehold.co/300x250" alt="" />
+            </div>
+            <div class="col-6 col-md-4 col-xl-2 px-0 img-container">
+                <img class="img-fluid" src="https://placehold.co/300x250" alt="" />
+            </div>
+            <div class="col-6 col-md-4 col-xl-2 px-0 img-container">
+                <img class="img-fluid" src="https://placehold.co/300x250" alt="" />
+            </div>
+            <div class="col-6 col-md-4 col-xl-2 px-0 img-container">
+                <img class="img-fluid" src="https://placehold.co/300x250" alt="" />
+            </div>
+            <div class="col-6 col-md-4 col-xl-2 px-0 img-container">
+                <img class="img-fluid" src="https://placehold.co/300x250" alt="" />
+            </div>
+            <div class="col-6 col-md-4 col-xl-2 px-0 img-container">
+                <img class="img-fluid" src="https://placehold.co/300x250" alt="" />
+            </div>
         </div>
     </section>
 
     <section>
         <div class="row w-full">
             <p>--Socials and newsletter --</p>
+            <div></div>
         </div>
     </section>
 
 </div>
+<!-- <style>
+
+    .img-container img {
+        width: 100%;
+        height: auto;
+    }
+</style> -->
         
 <?php include "assets/footer.php" ?>
