@@ -45,6 +45,52 @@
 
 <?php include "assets/hero.php" ?>
 <div class="container">
+    <section class="row lg:flex mt-3">
+        <div class="w-full col-lg-3">
+            <div class="row align-items-center">
+                <div class="col-4 text-center">
+                    <p>ICON</p>
+                </div>
+                <div class="col-8">
+                    <p class="fw-bold">Free Shipping</p>
+                    <p>On all orders above $150.</p>
+                </div>
+            </div>
+        </div>
+        <div class="w-full col-lg-3">
+            <div class="row align-items-center">
+                <div class="col-4 text-center">
+                    <p>ICON</p>
+                </div>
+                <div class="col-8">
+                    <p class="fw-bold">Free Return</p>
+                    <p>Within 30 days for an echange</p>
+                </div>
+            </div>
+        </div>
+        <div class="w-full col-lg-3">
+            <div class="row align-items-center">
+                <div class="col-4 text-center">
+                    <p>ICON</p>
+                </div>
+                <div class="col-8">
+                    <p class="fw-bold">Secured Payment</p>
+                    <p>We ensure secure payments and checkout.</p>
+                </div>
+            </div>
+        </div>
+        <div class="w-full col-lg-3">
+            <div class="row align-items-center">
+                <div class="col-4 text-center">
+                    <p>ICON</p>
+                </div>
+                <div class="col-8">
+                    <p class="fw-bold">Support 24/7</p>
+                    <p>Contact us 24 hours a day</p>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="row mt-5 mb-2">
         <h1 class="fw-bold text-center">Shop Your Favorite Products</h1>
     </section>
@@ -65,47 +111,6 @@
             </div>
         </div>
     </section>
-
-    <!-- <section class="row">
-
-    <?php 
-            //try {
-                //$sql = 'SELECT * FROM products';
-                //$stmt = $pdo->prepare($sql);
-                //$stmt->execute();
-                //$result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-                //while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                    ?>  
-                        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 p-2">
-                            <div class="card border-0 p-2 rounded-0 bg-body-secondary py-4" id="product-<?php echo htmlspecialchars($row['prodid']); ?>">
-                                <div class="d-flex justify-content-center">
-                                    <img src="<?php echo htmlspecialchars($row['prodimage']); ?>" class="card-img-top" alt="<?php echo htmlspecialchars($row['prodname']); ?>" style="width: 150px;">
-                                </div>
-                                <div class="card-body">
-                                    <div class="text-center">
-                                        <h5 class="card-title mb-1"><?php echo htmlspecialchars($row['prodname']); ?></h5>
-                                        <p class="card-text mb-1 fw-bold">$<?php echo htmlspecialchars($row['prodprice']); ?></p>
-                                    </div>
-                                    <div class="d-flex justify-content-evenly">
-                                            <p>5 <span style="color:#ffa41c">&#9733;&#9733;&#9733;&#9733;&#9733;</span></p>
-                                            <p class="ms-3"><?php echo htmlspecialchars($row['prodreviewcount']); ?> ratings</p>
-                                    </div>
-                                    <div class="col-12 pt-2 pb-2">
-                                        <a href="db/product.php?id=<?php echo htmlspecialchars($row['prodid']); ?>" class="btn btn-info w-100">Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php
-                //}
-            //}catch (PDOException $e) {
-                // Handle the exception
-                //echo "Connection failed: " . $e->getMessage();
-            //}           
-   ?>
-
-    </section> -->
 
     <section class="row">
 
@@ -175,6 +180,18 @@
                     <?php endif; ?>
                 </ul>
             </nav>
+        </div>
+    </section>
+
+    <section class="mt-5">
+        <div class="row w-full">
+            <h2 class="text-center fw-bold text-3xl">Gallery</h2>
+        </div>
+    </section>
+
+    <section>
+        <div class="row w-full">
+            <p>--Socials and newsletter --</p>
         </div>
     </section>
 
