@@ -185,11 +185,11 @@
 
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid p-0">
 
     <section class="mt-5">
-        <div class="row g-0">
-            <h2 class="text-center fw-bold text-3xl">Gallery</h2>
+        <div class="row mx-0">
+            <h2 class="text-center fw-bold text-3xl px-0">Gallery</h2>
         </div>
         <div class="row mt-3 mx-0">
             <div class="col-6 col-md-4 col-xl-2 px-0 img-container">
@@ -213,10 +213,26 @@
         </div>
     </section>
 
-    <section>
-        <div class="row w-full">
-            <p>--Socials and newsletter --</p>
-            <div></div>
+    <section class="text-bg-primary g-0 py-3">
+        <div class="row w-full mx-0 d-flex align-items-center">
+            <div class="w-full col-lg-4 px-0 text-center">
+                <p class="mb-0">
+                    <img src="https://placehold.co/15x15" alt="" />
+                    <img src="https://placehold.co/15x15" alt="" />
+                    <img src="https://placehold.co/15x15" alt="" />
+                    <img src="https://placehold.co/15x15" alt="" />
+                    <img src="https://placehold.co/15x15" alt="" />
+                    <img src="https://placehold.co/15x15" alt="" />
+                </p>
+            </div>
+            <div class="w-full col-lg-4 text-center px-0">Sign Up For Newsletters & Get 20% off</div>
+            <div class="w-full col-lg-4 text-center px-5">
+            <div class="input-group">
+                <input type="text" class="form-control rounded-0" placeholder="Your Email Address" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button class="btn bg-black text-white rounded" type="button" id="button-addon2">Subscribe</button>
+            </div>
+
+            </div>
         </div>
     </section>
 
