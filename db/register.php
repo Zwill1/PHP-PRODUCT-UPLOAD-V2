@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <?php include "../assets/header.php" ?>
 
-<div class="container">
+<div class="container my-5">
     <section class="row mt-5 mb-2">
         <h1 class="fw-bold text-center">Register for an Account</h1>
     </section>
