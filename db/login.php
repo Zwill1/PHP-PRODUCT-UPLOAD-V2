@@ -58,7 +58,7 @@ if(isset($_GET['reg_msg'])){
 ?>
 
 
-<div class="container">
+<div class="container my-5">
     <section class="row mt-5 mb-2">
         <h1 class="fw-bold text-center">Login to your Account</h1>
     </section>
