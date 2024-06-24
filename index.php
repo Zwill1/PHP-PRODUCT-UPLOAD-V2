@@ -213,9 +213,12 @@
         </div>
     </section>
 
-    <section class="text-bg-primary g-0 py-3">
-        <div class="row w-full mx-0 d-flex align-items-center">
-            <div class="w-full col-lg-4 px-0 text-center">
+</div>
+
+<div class="container-fluid text-bg-primary p-0">
+    <section class="container g-0 py-3">
+        <div class="row w-full mx-0 d-flex align-items-center py-2 py-lg-0">
+            <div class="w-full col-lg-4 px-0 text-center text-lg-start">
                 <p class="mb-0">
                     <img src="https://placehold.co/15x15" alt="" />
                     <img src="https://placehold.co/15x15" alt="" />
@@ -225,8 +228,8 @@
                     <img src="https://placehold.co/15x15" alt="" />
                 </p>
             </div>
-            <div class="w-full col-lg-4 text-center px-0">Sign Up For Newsletters & Get 20% off</div>
-            <div class="w-full col-lg-4 text-center px-5">
+            <div class="w-full col-lg-4 px-0 text-center text-lg-start py-4 py-lg-0">Sign Up For Newsletters & Get 20% off</div>
+            <div class="w-full col-lg-4 px-5">
             <div class="input-group">
                 <input type="text" class="form-control rounded-0" placeholder="Your Email Address" aria-label="Recipient's username" aria-describedby="button-addon2">
                 <button class="btn bg-black text-white rounded" type="button" id="button-addon2">Subscribe</button>
@@ -235,7 +238,6 @@
             </div>
         </div>
     </section>
-
 </div>
 <!-- <style>
 
