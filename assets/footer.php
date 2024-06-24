@@ -1,7 +1,7 @@
     <footer class="bg-body-tertiary pb-3 pt-3">
         <div class="container border-bottom">
             <div class="row py-4">
-                <div class="col-sm-12 col-md-3 text-center text-sm-center text-md-start">
+                <div class="col-sm-12 col-md-6 col-lg-3 text-center text-sm-center text-md-start py-3 py-lg-0">
                     <h6 class="fw-bold">Address</h6>
                     <p class="mb-0">Product Upload Ltd.</p>
                     <p class="mb-0">111 Calgary Ave.</p>
@@ -9,7 +9,7 @@
                     <p class="fw-bold">Phone <a href="#" class="text-decoration-none">(587) 111-2222</a></p>
                     <p class="fw-bold">Email <a href="#" class="text-decoration-none">info@productupload.ca</a></p>
                 </div>
-                <div class="col-sm-12 col-md-3 text-center text-sm-center text-md-start">
+                <div class="col-sm-12 col-md-6 col-lg-3 text-center text-sm-center text-md-start py-3 py-lg-0">
                     <h6 class="fw-bold">Store Locations</h6>
                     <p class="mb-0">Calgary - CANADA</p>
                     <p class="mb-0">Airdrie - CANADA</p>
@@ -18,7 +18,7 @@
                     <p class="mb-0">Banff - CANADA</p>
                     <p class="mb-0">Academy - CANADA</p>
                 </div>
-                <div class="col-sm-12 col-md-3 text-center text-sm-center text-md-start">
+                <div class="col-sm-12 col-md-6 col-lg-3 text-center text-sm-center text-md-start py-3 py-lg-0">
                     <div>
                         <h6 class="fw-bold">Store Hours:</h6>
                         <p class="mb-0">Monday - Saturday</p>
@@ -32,7 +32,7 @@
                         <p class="mb-0">Customer Feedback</p>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-3 text-center text-sm-center text-md-start">
+                <div class="col-sm-12 col-md-6 col-lg-3 text-center text-sm-center text-md-start py-3 py-lg-0">
                     <h6 class="fw-bold">Information:</h6>
                     <p class="mb-0">Affiliates</p>
                     <p class="mb-0">Brands</p>
