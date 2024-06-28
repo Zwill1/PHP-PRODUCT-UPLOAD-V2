@@ -56,8 +56,8 @@
                         </p>
                     </div>
                     <div class="col-9">
-                        <p class="fw-bold">Free Shipping</p>
-                        <p>On all orders above $150.</p>
+                        <p class="fw-bold mb-0">Free Shipping</p>
+                        <p class="mb-0">On all orders above $150.</p>
                     </div>
                 </div>
             </div>
@@ -69,8 +69,8 @@
                         </p>
                     </div>
                     <div class="col-9">
-                        <p class="fw-bold">Free Return</p>
-                        <p>Within 30 days for an echange</p>
+                        <p class="fw-bold mb-0">Free Return</p>
+                        <p class="mb-0">Within 30 days for an echange</p>
                     </div>
                 </div>
             </div>
@@ -82,8 +82,8 @@
                         </p>
                     </div>
                     <div class="col-9">
-                        <p class="fw-bold">Secured Payment</p>
-                        <p>We ensure secure payments and checkout.</p>
+                        <p class="fw-bold mb-0">Secured Payment</p>
+                        <p class="mb-0">We ensure secure payments and checkout.</p>
                     </div>
                 </div>
             </div>
@@ -95,8 +95,8 @@
                         </p>
                     </div>
                     <div class="col-9">
-                        <p class="fw-bold">Support 24/7</p>
-                        <p>Contact us 24 hours a day</p>
+                        <p class="fw-bold mb-0">Support 24/7</p>
+                        <p class="mb-0">Contact us 24 hours a day</p>
                     </div>
                 </div>
             </div>
@@ -177,7 +177,7 @@
 
     </section>
 
-    <section class="row">
+    <section class="pt-4">
         <div class="row">
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
@@ -207,22 +207,22 @@
         </div>
         <div class="row mt-3 mx-0">
             <div class="col-6 col-md-4 col-xl-2 px-0 img-container">
-                <img class="img-fluid" src="https://placehold.co/300x250" alt="" />
+                <img class="img-fluid" src="assets/images/image-1.jpg" alt="woman carrying her bags from a day of shopping" />
             </div>
             <div class="col-6 col-md-4 col-xl-2 px-0 img-container">
-                <img class="img-fluid" src="https://placehold.co/300x250" alt="" />
+                <img class="img-fluid" src="assets/images/image-2.jpg" alt="woman looking at shoes in a shopping mall" />
             </div>
             <div class="col-6 col-md-4 col-xl-2 px-0 img-container">
-                <img class="img-fluid" src="https://placehold.co/300x250" alt="" />
+                <img class="img-fluid" src="assets/images/image-3.jpg" alt="rack of suits in a store" />
             </div>
             <div class="col-6 col-md-4 col-xl-2 px-0 img-container">
-                <img class="img-fluid" src="https://placehold.co/300x250" alt="" />
+                <img class="img-fluid" src="assets/images/image-4.jpg" alt="clothes and shoes on a wall rack display" />
             </div>
             <div class="col-6 col-md-4 col-xl-2 px-0 img-container">
-                <img class="img-fluid" src="https://placehold.co/300x250" alt="" />
+                <img class="img-fluid" src="assets/images/image-5.jpg" alt="open store with clothes on hangers for customers" />
             </div>
             <div class="col-6 col-md-4 col-xl-2 px-0 img-container">
-                <img class="img-fluid" src="https://placehold.co/300x250" alt="" />
+                <img class="img-fluid" src="assets/images/image-6.jpg" alt="2 customers looking at clothes and checking the price tag" />
             </div>
         </div>
     </section>
