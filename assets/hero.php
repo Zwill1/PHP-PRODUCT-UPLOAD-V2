@@ -1,5 +1,5 @@
 <section class="container-fluid">
     <div class="row">
-        <img src="https://placehold.co/1900x600" class="img-fluid p-0" alt="...">
+        <img src="http://localhost/PHP-PRODUCT-UPLOAD-v2/assets/images/home-top-banner.jpg" class="img-fluid p-0" alt="...">
     </div>
 </section>
