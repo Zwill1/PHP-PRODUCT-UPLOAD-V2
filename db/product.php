@@ -37,8 +37,8 @@ if(isset($_GET['id'])){
                         <p class="ms-3 fst-italic fw-medium"><?php echo htmlspecialchars($row['prodreviewcount']); ?> ratings</p>
                     </div>
                     <p class="fw-semibold fs-2">$<?php echo htmlspecialchars($row['prodprice']); ?></p>
-                    <p>Stock left: <?php echo htmlspecialchars($row['prodquantity']); ?></p>
-                    <p>Product Tag: <?php echo htmlspecialchars($row['prodtag']); ?></p>
+                    <p>Stock: <?php echo htmlspecialchars($row['prodquantity']); ?></p>
+                    <p>Category: <span><?php echo htmlspecialchars($row['prodtag']); ?></span></p>
                     <p class="fw-bold">Details about this item:</p>
                     <p><?php echo htmlspecialchars($row['prodshortdescription']); ?></p>
                 </div>
@@ -79,10 +79,10 @@ if(isset($_GET['id'])){
                     ?>
 
                     <div class='col-sm-12 col-md-4 col-xl-2 p-2'>
-                        <div class="bg-body-secondary text-center py-4 p-2">
-                            <img src="<?php echo htmlspecialchars($row['prodimage']); ?>" class="card-img-top" alt="<?php echo htmlspecialchars($row['prodname']); ?>" style="width: 150px;">
+                        <div class="text-center py-4 p-2 border rounded-none border-8 border-solid border-gray-800">
+                            <img src="<?php echo htmlspecialchars($row['prodimage']); ?>" class="card-img-top" alt="<?php echo htmlspecialchars($row['prodname']); ?>" style="height: 150px; width: auto;">
                             <h4 class="mb-1"><a href="product.php?id=<?php echo htmlspecialchars($row['prodid']); ?>" class="text-decoration-none text-reset fs-6"><?php echo htmlspecialchars($row['prodname'])?></a></h4>
-                            <p class="">$<?php echo htmlspecialchars($row['prodprice']); ?></p>
+                            <p class="fw-bold fs-5">$<?php echo htmlspecialchars($row['prodprice']); ?></p>
                         </div>
                     </div>
 
