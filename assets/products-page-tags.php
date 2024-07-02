@@ -1,7 +1,7 @@
 <section class="container-fluid bg-white">
     <div class="row">
         <div class="col-6 col-md-4 col-lg-2 text-center pe-auto bg-info-subtle border-start border-end border-light border-2" role="button">
-            <a href="http://localhost/PHP-PRODUCT-UPLOAD-v2/products/new-arrivals.php" class="text-black fst-italic text-decoration-none py-3 d-flex items-center justify-content-center">New Arrivals <i class="ri-arrow-right-s-line"></i></a>
+            <a href="http://localhost/PHP-PRODUCT-UPLOAD-v2/products/arrivals.php" class="text-black fst-italic text-decoration-none py-3 d-flex items-center justify-content-center">Arrivals <i class="ri-arrow-right-s-line"></i></a>
         </div>
         <div class="col-6 col-md-4 col-lg-2 text-center pe-auto bg-info-subtle border-end border-light border-2" role="button">
             <a href="http://localhost/PHP-PRODUCT-UPLOAD-v2/products/shirts.php" class="text-black fst-italic text-decoration-none py-3 d-flex items-center justify-content-center">Shirts <i class="ri-arrow-right-s-line"></i></a>
