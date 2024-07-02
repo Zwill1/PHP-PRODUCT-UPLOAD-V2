@@ -38,7 +38,7 @@ if(isset($_GET['id'])){
                     </div>
                     <p class="fw-semibold fs-2">$<?php echo htmlspecialchars($row['prodprice']); ?></p>
                     <p>Stock: <?php echo htmlspecialchars($row['prodquantity']); ?></p>
-                    <p>Category: <span><?php echo htmlspecialchars($row['prodtag']); ?></span></p>
+                    <p>Category: <span class="bg-success-subtle px-2 rounded-pill"><a href="http://localhost/PHP-PRODUCT-UPLOAD-v2/products/<?php echo htmlspecialchars($row['prodtag']); ?>.php" class="text-reset text-decoration-none"><?php echo htmlspecialchars($row['prodtag']); ?></a></span></p>
                     <p class="fw-bold">Details about this item:</p>
                     <p><?php echo htmlspecialchars($row['prodshortdescription']); ?></p>
                 </div>
