@@ -48,6 +48,18 @@
             <nav class="nav flex-column">
                 <a class="btn btn-secondary m-0 rounded-0" type="button" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Add a Product</a>
             </nav>
+            <div class="row mx-0">
+            <div class="col-lg-6 col-xl-6 p-0">
+                <nav class="nav flex-column">
+                    <a class="btn btn-warning m-0 rounded-0" type="button" href="#">List View</a>
+                </nav>
+            </div>
+            <div class="col-lg-6 col-xl-6 p-0">
+                <nav class="nav flex-column">
+                    <a class="btn btn-info m-0 rounded-0" type="button" href="#">Grid View</a>
+                </nav>
+            </div>
+            </div>
         </div>
         <div class="col-lg-12 col-xl-9">
             <div class="row">
