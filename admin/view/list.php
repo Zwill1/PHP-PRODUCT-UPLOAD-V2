@@ -58,6 +58,7 @@
                     <th scope="col">Price</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Category</th>
+                    <th scope="col">Product Details</th>
                 </tr>
             </thead>
             <?php foreach ($results as $row): ?>
@@ -68,6 +69,9 @@
                 <td>$<?php echo htmlspecialchars($row['prodprice']); ?></td>
                 <td><?php echo htmlspecialchars($row['prodquantity']); ?></td>
                 <td><?php echo htmlspecialchars($row['prodtag']); ?></td>
+                <td>
+                    <a href="../../db/product.php?id=<?php echo htmlspecialchars($row['prodid']); ?>" class="btn btn-info w-100 rounded-0">Details</a>
+                </td>
             </tr>
             <?php endforeach; ?>
         </table>
