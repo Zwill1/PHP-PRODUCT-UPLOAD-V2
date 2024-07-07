@@ -2,6 +2,8 @@
 <?php include "../assets/header.php" ?>
 <?php include "../assets/hero.php" ?>
 
+<?php include '../assets/components/iconbar.php' ?>
+
 <div class="container">
     <section class="row mt-5 mb-2">
         <h1 class="fw-bold text-center">Shop Shirts</h1>
