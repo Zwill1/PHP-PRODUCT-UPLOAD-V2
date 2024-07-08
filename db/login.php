@@ -10,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($username) || empty($password)) {
         // die("Please fill in all fields.");
         header("location:./login.php?message=Please fill in all form fields!");
+        exit;
     }
 
     // Fetch user from database
@@ -24,10 +25,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Password is correct, start a new session
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
-        echo "Login successful!";
+        // echo "Login successful!";
         // header("location:../admin/account.php?acct_msg=Login Successful!");
     } else {
-        echo "Invalid username or password.";
+        // echo "Invalid username or password.";
+        header("location:./login.php?message=Invalid username or password.");
+        exit;
     }
 }
 
