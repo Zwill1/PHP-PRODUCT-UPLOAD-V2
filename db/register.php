@@ -8,13 +8,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $confirmpassword = trim($_POST["confirmpassword"]);
 
     // Validate input
-    if (empty($username) || empty($email) || empty($password)) {
-        die("Please fill in all fields.");
+    if (empty($username) || $username == "") {
+        // die("Please fill in all fields.");
+        header("location:./register.php?message=Please fill in all form fields!");
     }
+    if (empty($email) || $email == "") {
+        // die("Please fill in all fields.");
+        header("location:./register.php?message=Please fill in all form fields!");
+    }
+    if (empty($password) || $password == "") {
+        // die("Please fill in all fields.");
+        header("location:./register.php?message=Please fill in all form fields!");
+    }
+    if (empty($confirmpassword) || $confirmpassword == "") {
+        // die("Please fill in all fields.");
+        header("location:./register.php?message=Please fill in all form fields!");
+    }
+    // if (empty($username) || empty($email) || empty($password)) {
+    //     // die("Please fill in all fields.");
+    //     header("location:./register.php?message=Please fill in all form fields!");
+    // }
 
     // Check if passwords match
     if ($password !== $confirmpassword) {
-        die("Passwords do not match.");
+        // die("Passwords do not match.");
+        header("location:./register.php?message=Passwords do not match.");
     }
 
     // Check if username or email already exists
@@ -26,7 +44,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // $stmt->execute(['username' => $username, 'email' => $email]);
     if ($stmt->fetch()) {
-        die("Username or email already taken.");
+        // die("Username or email already taken.");
+        header("location:./register.php?message=Username or email already taken.");
     }
 
     // Hash the password
@@ -51,6 +70,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 <?php include "../assets/header.php" ?>
+
+<?php 
+if(isset($_GET['message'])){
+    echo 
+    "<section class='container-fluid p-0'>
+        <div class='bg-danger p-2'>
+            <div class='container text-white text-center fw-bold'>
+                <h6 class='text-center'>".$_GET['message']."</h6>
+            </div>
+        </div>
+    </section>";
+}  
+?>
 
 <div class="container my-5">
     <section class="row mt-5 mb-2">
