@@ -8,7 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Validate input
     if (empty($username) || empty($password)) {
-        die("Please fill in all fields.");
+        // die("Please fill in all fields.");
+        header("location:./login.php?message=Please fill in all form fields!");
     }
 
     // Fetch user from database
@@ -55,8 +56,17 @@ if(isset($_GET['reg_msg'])){
         </div>
     </section>";
 }            
+if(isset($_GET['message'])){
+    echo 
+    "<section class='container-fluid p-0'>
+        <div class='bg-danger p-2'>
+            <div class='container text-white text-center fw-bold'>
+                <h6 class='text-center'>".$_GET['message']."</h6>
+            </div>
+        </div>
+    </section>";
+}   
 ?>
-
 
 <div class="container my-5">
     <section class="row mt-5 mb-2">
