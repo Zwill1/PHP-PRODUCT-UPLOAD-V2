@@ -2,6 +2,20 @@
 <?php include "../db/dbcon-pdo.php" ?>
 <?php include "../assets/header.php" ?>
 
+<!-- display success when inserting is done correctly -->
+<?php        
+    if(isset($_GET['insert_msg'])){
+        echo 
+        "<section class='container-fluid p-0'>
+            <div class='bg-success p-2'>
+                <div class='container text-white text-center fw-bold'>
+                    <h6 class='text-center'>".$_GET['insert_msg']."</h6>
+                </div>
+            </div>
+        </section>";
+    }       
+?>
+
 <!-- display success when registering/logging in is done correctly -->
 <?php        
     if(isset($_GET['acct_msg'])){
@@ -24,6 +38,20 @@
             <div class='bg-danger p-2'>
                 <div class='container text-white text-center fw-bold'>
                     <h6 class='text-center'>".$_GET['message']."</h6>
+                </div>
+            </div>
+        </section>";
+    }       
+?>
+
+<!-- display success when deleting a product is done correctly -->
+<?php        
+    if(isset($_GET['delete_msg'])){
+        echo 
+        "<section class='container-fluid p-0'>
+            <div class='bg-success p-2'>
+                <div class='container text-white text-center fw-bold'>
+                    <h6 class='text-center'>".$_GET['delete_msg']."</h6>
                 </div>
             </div>
         </section>";
