@@ -9,22 +9,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Validate input
     if (empty($username) || $username == "") {
-        // die("Please fill in all fields.");
         header("location:./register.php?message=Please fill in your username!");
         exit;
     }
     if (empty($email) || $email == "") {
-        // die("Please fill in all fields.");
         header("location:./register.php?message=Please fill in your email!");
         exit;
     }
     if (empty($password) || $password == "") {
-        // die("Please fill in all fields.");
         header("location:./register.php?message=Please fill in your password!");
         exit;
     }
     if (empty($confirmpassword) || $confirmpassword == "") {
-        // die("Please fill in all fields.");
         header("location:./register.php?message=Please fill in your confirm password!");
         exit;
     }
@@ -35,7 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Check if passwords match
     if ($password !== $confirmpassword) {
-        // die("Passwords do not match.");
         header("location:./register.php?message=Passwords do not match.");
         exit;
     }
@@ -47,9 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bindParam(':email', $email, PDO::PARAM_STR);
     $stmt->execute();
 
-    // $stmt->execute(['username' => $username, 'email' => $email]);
     if ($stmt->fetch()) {
-        // die("Username or email already taken.");
         header("location:./register.php?message=Username or email already taken.");
         exit;
     }
@@ -63,16 +56,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bindParam(':username', $username, PDO::PARAM_STR);
     $stmt->bindParam(':email', $email, PDO::PARAM_STR);
     $stmt->bindParam(':password', $hashed_password, PDO::PARAM_STR);
-
-    // if ($stmt->execute(['username' => $username, 'email' => $email, 'password' => $hashed_password])) 
     
     if ($stmt->execute(['username' => $username, 'email' => $email, 'password' => $hashed_password])){
-        // echo "Registration successful!";
-        // header("location:../admin/account.php?reg_msg=Registration Successful!");
         header("location: login.php?reg_msg=Registration Successful!");
         exit;
     } else {
-        echo "Something went wrong. Please try again.";
+        header("location:./register.php?message=Please fill in all form fields to register!");
+        exit;
     }
 }
 ?>
