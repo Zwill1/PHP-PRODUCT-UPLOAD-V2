@@ -16,27 +16,35 @@ if(isset($_POST["create_product"])){
     // Checks to see if name is empty as a STRING or NULL - NOT WORKING AS INTENDED JUST YET
     if($pname == "" || empty($pname)){
         header("location:../admin/account.php?message=You need fill in the product name");
+        exit;
     }
     if($pbrand == "" || empty($pname)){
         header("location:../admin/account.php?message=You need fill in the product brand");
+        exit;
     }
     if($pprice == "" || empty($pprice)){
         header("location:../admin/account.php?message=You need fill in the product price");
+        exit;
     }
     if($pquantity == "" || empty($pquantity)){
         header("location:../admin/account.php?message=You need fill in the product quantity");
+        exit;
     } 
     if($pimage == "" || empty($pimage)){
         header("location:../admin/account.php?message=You need fill in the product image link");
+        exit;
     } 
     if($ptag == "" || empty($ptag)){
         header("location:../admin/account.php?message=You need fill in the product tag");
+        exit;
     } 
     if($pshortdescription == "" || empty($pshortdescription)){
         header("location:../admin/account.php?message=You need fill in the product short description");
+        exit;
     } 
     if($plongdescription == "" || empty($plongdescription)){
         header("location:../admin/account.php?message=You need fill in the product long description");
+        exit;
     } 
     else {
 
@@ -54,12 +62,13 @@ if(isset($_POST["create_product"])){
         $stmt->bindParam(':plongdescription', $plongdescription, PDO::PARAM_STR);
 
         if($stmt->execute()){
-
             // Redirects to index page with row data
-            header("location:../index.php?insert_msg=The product has been added to the database.");
-
+            header("location:../admin/account.php?insert_msg=The product has been added to the database.");
+            exit;
         }else {
-            echo "Something went wrong. Please try again.";
+            // Redirects to account admin page with row data
+            header("location:../admin/account.php?message=Their was an error adding the product.");
+            exit;
         }
     }
 
