@@ -9,8 +9,13 @@
         
         if($stmt->execute(['id' => $id])){
             $row = $stmt->fetch();
+            if(!$row){
+                header("location:../admin/account.php?message=The product was not found.");
+                exit;
+            }
         }else{
-            die("Query failed: No results found");
+            header("location:../admin/account.php?message=Query failed: No results found");
+            exit;
         }
             
 }
@@ -42,9 +47,11 @@
         $stmt->bindParam(':plongdescription', $plongdescription, PDO::PARAM_STR);
 
         if($stmt->execute(['id' => $id,'pname' => $pname, 'pbrand' => $pbrand, 'pprice' => $pprice, 'pquantity' => $pquantity, 'pimage' => $pimage, 'ptag' => $ptag, 'pshortdescription' => $pshortdescription, 'plongdescription' => $plongdescription])){
-            header("location:../index.php?update_msg=The product has been updated.");
+            header("location:../admin/account.php?update_msg=The product has been updated.");
+            exit;
         }else {
-            echo "Something went wrong. Please try again.";
+            header("location:../admin/account.php?message=The product was not updated.");
+            exit;
         }
     }
 
@@ -56,7 +63,6 @@
 
 
 <div class="container mt-3 mb-3">
-
 <form action="edit_product.php?id=<?php echo $id; ?>" method="POST">
     <div class="form-group">
         <label for="exampleInputFistName">Product Name</label>
