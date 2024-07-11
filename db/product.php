@@ -1,7 +1,4 @@
 <?php include "dbcon-pdo.php" ?>
-<?php include "../assets/header.php" ?>
-
-<section class="container">
 
 <?php 
 
@@ -15,13 +12,19 @@ if(isset($_GET['id'])){
     $stmt->execute();
     
     if ($stmt->rowCount() == 0) {
-        die("Query failed: No results found");
+        header("location:../index.php?message=The product was not found.");
+        exit;
     } else {
         $row = $stmt->fetch();
     }
 }
 
 ?>
+
+<?php include "../assets/header.php" ?>
+
+<section class="container">
+
 
 <?php if (isset($row)) { ?>
         <div class="mt-5 mb-3">
@@ -69,7 +72,8 @@ if(isset($_GET['id'])){
 
         try{
             if ($stmt->rowCount() == 0) {
-                die("Query failed: No results found");
+                echo("Error: Failed to load product recommendations.");
+                exit;
             } else {
                 for ($i = 1; $i <= 6; $i++) {
                     $row = $stmt->fetch();
