@@ -63,12 +63,6 @@
                         echo '</div>';
                     echo '</div>';
                 echo '</div>';
-
-                // echo "ID: " . $product['prodid'] . "<br>";
-                // echo "Name: " . $product['prodname'] . "<br>";
-                // echo "Category: " . $product['prodtag'] . "<br>";
-                // echo "Price: " . $product['prodprice'] . "<br><br>";
-                // echo '</div>';
                 }
             }
         }
