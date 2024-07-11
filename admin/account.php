@@ -58,6 +58,20 @@
     }       
 ?>
 
+<!-- display success when editing is done correctly -->
+<?php        
+    if(isset($_GET['update_msg'])){
+        echo 
+        "<section class='container-fluid p-0'>
+            <div class='bg-success p-2'>
+                <div class='container text-white text-center fw-bold'>
+                    <h6 class='text-center'>".$_GET['update_msg']."</h6>
+                </div>
+            </div>
+        </section>";
+    }       
+?>
+
 <!-- Set up local storage for session value and allow the nav to pick up if a session exists -->
 
 <!-- Protected content here -->
