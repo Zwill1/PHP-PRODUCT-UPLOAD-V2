@@ -19,13 +19,14 @@ Website will include pages to create a product, edit and update the values of a 
 
 ## Features
 
-- Register users with a email, username and password that is hashed.
+- Registeration -  Users with a email, username and password that is hashed.
 - Allows Logins and Logout
 - Uses Sessions.
-- Sets log in details to local storage and deletes when logged out.
-- Includes an option to filter products on home page.
-- Has pagination on home page and log in page.
-- Account page includes a regular view, list view and grid view
+- Stores/Deletes Session details in Local Storage.
+- Filter Products - On home page.
+- Product Pagination - Home page, Backend account page.
+- Account Page - Regular view, list view and grid view
+- Flash Messages - For adding, editing, deleting and other message warnings
 
 ## Registration
 
@@ -34,6 +35,15 @@ Website will include pages to create a product, edit and update the values of a 
     - Email Address
     - Password
     - Confirm Password
+
+## Routes
+
+- Routes on adding and editing the product details are now protected. Also applies to the single product page. When the URL is changed to an ID that doesnt exist in the database, the page will redirect with a warning.
+
+- Applies to:
+    - Add Product
+    - Edit Product
+    - Product page
 
 ## Security
 
