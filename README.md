@@ -1,4 +1,4 @@
-# PHP Product Upload Version 2.0.0
+# PHP Product Upload Version 2.5.1
 
 ## Objective
 
@@ -14,6 +14,7 @@ Allow a product to be uploaded to a database with the following:
 - Product Short Description
 - Product Long Description
 - Product Review Count (Calculate the average review score)
+- Seller (User - wont be changed)
 
 Website will include pages to create a product, edit and update the values of a product in the database. Product pages will display all the information on the page from the database with the values from above.
 
@@ -27,6 +28,7 @@ Website will include pages to create a product, edit and update the values of a 
 - Product Pagination - Home page, Backend account page.
 - Account Page - Regular view, list view and grid view
 - Flash Messages - For adding, editing, deleting and other message warnings
+- Sellers - See which user is selling the product
 
 ## Registration
 
