@@ -35,6 +35,7 @@ if(isset($_GET['id'])){
                 <div class="col-sm-12 col-md-6 col-xl-8">
                     <h1 class="fw-bold"><?php echo htmlspecialchars($row['prodname']); ?></h1>
                     <p><span class="fw-bold">Brand:</span> <?php echo htmlspecialchars($row['prodbrand']); ?></p>
+                    <p><span class="fw-bold">Seller:</span> -- SELLER --</p>
                     <div class="d-flex justify-content-start">
                         <p>5 <span style="color:#ffa41c">&#9733;&#9733;&#9733;&#9733;&#9733;</span></p>
                         <p class="ms-3 fst-italic fw-medium"><?php echo htmlspecialchars($row['prodreviewcount']); ?> ratings</p>
