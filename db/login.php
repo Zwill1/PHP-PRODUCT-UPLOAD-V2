@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Fetch user from database
-    $stmt = $pdo->prepare("SELECT id, username, password FROM users WHERE username = :username");
+    $stmt = $pdo->prepare("SELECT userId, username, password FROM users WHERE username = :username");
     // Using BindParam for more security
     $stmt->bindParam(':username', $username, PDO::PARAM_STR);
     $stmt->execute();
@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($user && password_verify($password, $user['password'])) {
         // Password is correct, start a new session
-        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['user_id'] = $user['userId'];
         $_SESSION['username'] = $user['username'];
     } else {
         header("location:./login.php?message=Invalid username or password.");
