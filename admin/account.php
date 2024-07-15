@@ -72,6 +72,10 @@
     }       
 ?>
 
+<!-- Get session ID of current user: -->
+
+<?php $loggedInID = $_SESSION["user_id"]; ?>
+
 <!-- Set up local storage for session value and allow the nav to pick up if a session exists -->
 
 <!-- Protected content here -->
@@ -232,6 +236,12 @@
                         <label for="exampleInputAge">Product Long Description</label>
                         <textarea type="text" class="form-control" id="exampleInputAge" name="plongdescription"></textarea> 
                     </div>
+                    <div class="form-group">
+                        <label for="exampleInputAge">UserID</label>
+                    </div>
+                    <select class="form-select" aria-label="Default select example" name="usrId">
+                        <option selected value="<?php echo $loggedInID ?>"><?php echo $loggedInID ?></option>
+                    </select>
                 <!-- </form> -->
                 </div>
                 <div class="modal-footer">
@@ -242,6 +252,7 @@
             </form>
         </div>
     </div>
+
     <!-- Modal -->
 
 <?php include "../assets/footer.php" ?>
