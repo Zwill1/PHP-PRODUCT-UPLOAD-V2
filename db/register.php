@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Check if username or email already exists
-    $stmt = $pdo->prepare("SELECT id FROM users WHERE username = :username OR email = :email");
+    $stmt = $pdo->prepare("SELECT userId FROM users WHERE username = :username OR email = :email");
     // Using BindParam for more security
     $stmt->bindParam(':username', $username, PDO::PARAM_STR);
     $stmt->bindParam(':email', $email, PDO::PARAM_STR);
