@@ -1,7 +1,7 @@
 <?php 
 
 // Database connection details
-$dsn = 'mysql:host=localhost;dbname=phpproductupload;';
+$dsn = 'mysql:host=localhost;dbname=phpproductuploadv2;';
 $username = 'root';
 $password = '';
 
