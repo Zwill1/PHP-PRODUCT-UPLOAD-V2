@@ -56,10 +56,24 @@ Website will include pages to create a product, edit and update the values of a 
 
 - Users:
 
-| prodid  | prodname | prodbrand | prodprice | prodquantity | prodimage | prodtag | prodlongdescription | prodshortdescription | prodviewcount | userId | 
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+- Products Table:
+
+| Column | Type |  Null | DEfault | Extra |
+| --- | --- | --- | --- | --- |
+| prodid | int  | NOT NULL  | | AUTO_INCREMENT  |
+| prodname | varchar(255)  | NOT NULL  |
+| prodbrand | varchar(60)  | NOT NULL  |
+| prodprice | decimal(11,2)  | NOT NULL  |
+| prodquantity | int  | NOT NULL  |
+| prodimage | varchar(255)  | NOT NULL  |
+| prodtag | varchar(55)  | NOT NULL  | 
+| prodlongdescription | varchar(255)  | NOT NULL  | 
+| prodshortdescription | varchar(255)  | NOT NULL  | 
+| prodreviewcount | int(11)  | NOT NULL  |
+| userId | int  |
+
+Extra: PRIMARY KEY (prodid), FOREIGN KEY (userId) REFERENCES Users(userId)
+
 
 
 ## Goal
