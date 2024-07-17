@@ -84,7 +84,7 @@ Extra: PRIMARY KEY (userId)
 
 Extra: PRIMARY KEY (prodid), FOREIGN KEY (userId) REFERENCES Users(userId)
 
-SQL Code:
+## SQL Code:
 
 ```
 CREATE TABLE users (
