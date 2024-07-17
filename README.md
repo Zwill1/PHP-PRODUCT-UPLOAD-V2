@@ -56,9 +56,19 @@ Website will include pages to create a product, edit and update the values of a 
 
 - Users:
 
+| Column | Type |  Null | Default | Extra |
+| --- | --- | --- | --- | --- |
+| userId | int  | NOT NULL  | | AUTO_INCREMENT  |
+| username | varchar(50)  | NOT NULL  |
+| email | varchar(100)  | NOT NULL  |
+| password | varchar(255)  | NOT NULL  |
+| created_at | TIMESTAMP  | NOT NULL  | current_timestamp() |
+
+Extra: PRIMARY KEY (userId)
+
 - Products Table:
 
-| Column | Type |  Null | DEfault | Extra |
+| Column | Type |  Null | Default | Extra |
 | --- | --- | --- | --- | --- |
 | prodid | int  | NOT NULL  | | AUTO_INCREMENT  |
 | prodname | varchar(255)  | NOT NULL  |
@@ -73,6 +83,38 @@ Website will include pages to create a product, edit and update the values of a 
 | userId | int  |
 
 Extra: PRIMARY KEY (prodid), FOREIGN KEY (userId) REFERENCES Users(userId)
+
+SQL Code:
+
+```
+CREATE TABLE users (
+userId INT NOT NULL AUTO_INCREMENT,
+username varchar(50) NOT NULL,
+email varchar(100) NOT NULL,
+password varchar(255) NOT NULL,
+created_at TIMESTAMP NOT NULL DEFAULT current_timestamp(),
+PRIMARY KEY (userId)
+);
+```
+
+
+```
+CREATE TABLE products (
+prodid int NOT NULL AUTO_INCREMENT,
+prodname varchar(255) NOT NULL,
+prodbrand varchar(60) NOT NULL,
+prodprice decimal(11,2) NOT NULL,
+prodquantity int NOT NULL,
+prodimage varchar(255) NOT NULL,
+prodtag varchar(55) NOT NULL,
+prodlongdescription varchar(255) NOT NULL,
+prodshortdescription varchar(255) NOT NULL,
+prodreviewcount int(11) NOT NULL,
+userId INT,
+PRIMARY KEY (prodid),
+FOREIGN KEY (userId) REFERENCES Users(userId)
+); 
+```
 
 
 
