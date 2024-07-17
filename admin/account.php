@@ -113,7 +113,7 @@
             <?php 
             
                 $resultsPerPage = 4;
-                $sql = 'SELECT COUNT(*) FROM products';
+                $sql = "SELECT COUNT(*) FROM products";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute();
                 $totalResults = $stmt->fetchColumn();
@@ -121,10 +121,11 @@
                 $page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
                 $startingLimit = ($page - 1) * $resultsPerPage;
 
-                $sql = "SELECT * FROM products LIMIT :startingLimit, :resultsPerPage";
+                $sql = "SELECT * FROM products WHERE userId = :loggedInID LIMIT :startingLimit, :resultsPerPage";
                 $stmt = $pdo->prepare($sql);
                 $stmt->bindParam(':startingLimit', $startingLimit, PDO::PARAM_INT);
                 $stmt->bindParam(':resultsPerPage', $resultsPerPage, PDO::PARAM_INT);
+                $stmt->bindParam(':loggedInID', $loggedInID, PDO::PARAM_INT);
                 $stmt->execute();
                 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
             
