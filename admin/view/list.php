@@ -14,6 +14,10 @@
     Password Policies: Enforce strong password policies to ensure users create strong passwords.
     Input Validation and Sanitization: Always validate and sanitize user input to prevent XSS and other injection attacks. -->
 
+<!-- Get session ID of current user: -->
+
+<?php $loggedInID = $_SESSION["user_id"]; ?>
+
 <div class="container-fluid pt-5 px-0">
     <div class="row mx-0">
         <div class="col-lg-12 col-xl-3">
@@ -42,8 +46,9 @@
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute();
 
-                $sql = "SELECT * FROM products";
+                $sql = "SELECT * FROM products WHERE userId = :loggedInID";
                 $stmt = $pdo->prepare($sql);
+                $stmt->bindParam(':loggedInID', $loggedInID, PDO::PARAM_INT);
                 $stmt->execute();
                 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
             
