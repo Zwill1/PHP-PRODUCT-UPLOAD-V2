@@ -52,6 +52,16 @@ Website will include pages to create a product, edit and update the values of a 
 - Protection against XSS attack when displaying data on pages.
 - Uses PDO structure for data inserting and updates.
 
+## Database Setup
+
+- Users:
+
+| prodid  | prodname | prodbrand | prodprice | prodquantity | prodimage | prodtag | prodlongdescription | prodshortdescription | prodviewcount | userId | 
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
+
 ## Goal
 
 - Move the Add Product, Update and Delete functionality when user is logged in.
