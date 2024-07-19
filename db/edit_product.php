@@ -32,8 +32,9 @@
         $ptag = $_POST["ptags"];
         $pshortdescription = $_POST["pshortdescription"];
         $plongdescription = $_POST["plongdescription"];
+        $userId = $_POST["usrId"];
 
-        $query = "update `products` set `prodname` = :pname, `prodbrand` = :pbrand, `prodprice` = :pprice, `prodquantity` = :pquantity, `prodimage` = :pimage, `prodtag` = :ptag, `prodshortdescription` = :pshortdescription, `prodlongdescription` = :plongdescription where `prodid` = :id";
+        $query = "update `products` set `prodname` = :pname, `prodbrand` = :pbrand, `prodprice` = :pprice, `prodquantity` = :pquantity, `prodimage` = :pimage, `prodtag` = :ptag, `prodshortdescription` = :pshortdescription, `prodlongdescription` = :plongdescription, `userId` = :userId where `prodid` = :id";
 
         $stmt = $pdo->prepare($query);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
@@ -45,8 +46,9 @@
         $stmt->bindParam(':ptag', $ptag, PDO::PARAM_STR);
         $stmt->bindParam(':pshortdescription', $pshortdescription, PDO::PARAM_STR);
         $stmt->bindParam(':plongdescription', $plongdescription, PDO::PARAM_STR);
+        $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
 
-        if($stmt->execute(['id' => $id,'pname' => $pname, 'pbrand' => $pbrand, 'pprice' => $pprice, 'pquantity' => $pquantity, 'pimage' => $pimage, 'ptag' => $ptag, 'pshortdescription' => $pshortdescription, 'plongdescription' => $plongdescription])){
+        if($stmt->execute(['id' => $id,'pname' => $pname, 'pbrand' => $pbrand, 'pprice' => $pprice, 'pquantity' => $pquantity, 'pimage' => $pimage, 'ptag' => $ptag, 'pshortdescription' => $pshortdescription, 'plongdescription' => $plongdescription, 'userId' => $userId])){
             header("location:../admin/account.php?update_msg=The product has been updated.");
             exit;
         }else {
@@ -105,6 +107,12 @@
         <label for="exampleInputAge">Product Long Description</label>
         <textarea type="text" class="form-control" id="exampleInputAge" name="plongdescription"><?php echo htmlspecialchars($row['prodlongdescription']); ?></textarea> 
     </div>
+    <div class="form-group">
+        <label for="exampleInputAge">UserID</label>
+    </div>
+    <select class="form-select" aria-label="Default select example" name="usrId">
+        <option selected value="<?php echo htmlspecialchars($row['userId']); ?>"><?php echo htmlspecialchars($row['userId']); ?></option>
+    </select>
     <div class="form-group mt-3">
         <input type="submit" class="btn btn-success" name="update_product" value="Update" />
     </div>
