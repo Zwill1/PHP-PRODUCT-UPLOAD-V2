@@ -1,6 +1,30 @@
+<?php include "../db/session.php" ?>
 <?php include "dbcon-pdo.php" ?>
 
 <?php 
+
+    // Get session ID for current user
+
+    $loggedInID = $_SESSION["user_id"];
+    $sess_id = intval($loggedInID);
+    // print_r($sess_id);
+
+    $sql = "SELECT userId FROM products WHERE userId = :sess_id";
+    $IDstmt = $pdo->prepare($sql);
+    $IDstmt->bindParam(':sess_id', $sess_id, PDO::PARAM_INT);
+    $IDstmt->execute();
+
+    $resultID = $IDstmt->fetch(PDO::FETCH_ASSOC);
+    // print_r($resultID['userId']);
+    // var_dump($resultID);
+    $user_id = $resultID['userId'];
+
+    $p_user_id = intval($resultID);
+
+    // var_dump($sess_id);
+    // var_dump($p_user_id);
+
+
     if(isset($_GET['id'])){
         $id = $_GET['id'];
 
@@ -18,7 +42,24 @@
             exit;
         }
             
-}
+    }
+
+    // compare whether the user owns this product under their userID
+
+    // check session ID
+
+    // check field value from form
+    // print_r($row['userId']);
+    $form_userID = intval($row['userId']);
+    // print_r($form_userID);
+
+    if($sess_id !== $form_userID){
+        // print_r("No ID match");
+        header("location:../admin/account.php?message=You do not have permission to edit this product or the product was not found.");
+        exit;
+    }else {
+        // print_r("ID is matched correctly");
+    }
 ?>
 
 <?php
@@ -61,7 +102,6 @@
 ?>
 
 <?php include "../assets/header.php" ?>
-
 
 
 <div class="container mt-3 mb-3">
