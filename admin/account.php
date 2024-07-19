@@ -237,10 +237,10 @@
                         <label for="exampleInputAge">Product Long Description</label>
                         <textarea type="text" class="form-control" id="exampleInputAge" name="plongdescription"></textarea> 
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="display: none;">
                         <label for="exampleInputAge">UserID</label>
                     </div>
-                    <select class="form-select" aria-label="Default select example" name="usrId">
+                    <select class="form-select" aria-label="Default select example" name="usrId" style="display: none;">
                         <option selected value="<?php echo $loggedInID ?>"><?php echo $loggedInID ?></option>
                     </select>
                 <!-- </form> -->
