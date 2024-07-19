@@ -25,7 +25,6 @@ if(isset($_GET['id'])){
 
 <section class="container">
 
-
 <?php if (isset($row)) { ?>
         <div class="mt-5 mb-3">
             <div class="row">
