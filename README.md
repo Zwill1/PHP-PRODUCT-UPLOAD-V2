@@ -4,7 +4,7 @@
 
 Allow a product to be uploaded to a database with the following:
 
-- Product id
+- Product Id
 - Product Name
 - Product Brand
 - Product Price
@@ -14,7 +14,7 @@ Allow a product to be uploaded to a database with the following:
 - Product Short Description
 - Product Long Description
 - Product Review Count (Calculate the average review score)
-- Seller (User - wont be changed)
+- Seller (UserId - ID given when registered.)
 
 Website will include pages to create a product, edit and update the values of a product in the database. Product pages will display all the information on the page from the database with the values from above.
 
@@ -28,7 +28,13 @@ Website will include pages to create a product, edit and update the values of a 
 - Product Pagination - Home page, Backend account page.
 - Account Page - Regular view, list view and grid view
 - Flash Messages - For adding, editing, deleting and other message warnings
-- Sellers - See which user is selling the product
+- Sellers - Products are now associated with Users who added them. (Click a user and see what products they have uploaded)
+
+## Seller Profile Features
+
+- Products can be tracked by the seller
+- Join dates when user registered to the website
+- Grid of products in the profile that user has uploaded
 
 ## Registration
 
