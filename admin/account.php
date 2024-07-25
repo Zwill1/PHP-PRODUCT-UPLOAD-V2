@@ -131,7 +131,10 @@
             
             ?>
 
-            <?php foreach ($results as $row): ?>
+            <?php 
+            
+            try {
+                foreach ($results as $row): ?>
                     <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 p-0">
                         <div class="border rounded-none border-8 border-solid border-gray-800 m-2 my-xl-0 mx-md-1">
 
@@ -162,23 +165,34 @@
 
                         </div>
                     </div>
-            <?php endforeach; ?>
+                <?php endforeach;             
+            }catch(PDOException $e){
+                // Handle the exception
+                echo "Connection failed: " . $e->getMessage();
+            } ?>
 
         </div>
         <div class="row py-5">
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
-                    <?php if ($page > 1): ?>
-                        <li class="page-item"><a class="page-link" href="?page=<?php echo $page - 1; ?>">Previous</a></li>
-                    <?php endif; ?>
-                    <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-                        <li class="page-item <?php if ($page == $i) echo 'active'; ?>">
-                            <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
-                        </li>
-                    <?php endfor; ?>
-                    <?php if ($page < $totalPages): ?>
-                        <li class="page-item"><a class="page-link" href="?page=<?php echo $page + 1; ?>">Next</a></li>
-                    <?php endif; ?>
+                    <?php
+                    try{                    
+                        if ($page > 1): ?>
+                            <li class="page-item"><a class="page-link" href="?page=<?php echo $page - 1; ?>">Previous</a></li>
+                        <?php endif; ?>
+                        <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+                            <li class="page-item <?php if ($page == $i) echo 'active'; ?>">
+                                <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                            </li>
+                        <?php endfor; ?>
+                        <?php if ($page < $totalPages): ?>
+                            <li class="page-item"><a class="page-link" href="?page=<?php echo $page + 1; ?>">Next</a></li>
+                        <?php endif; 
+                    }catch(PDOException $e){
+                        // Handle the exception
+                        echo 'Caught exception: ',  $e->getMessage();
+                    }                    
+                    ?>
                 </ul>
             </nav>
         </div>
