@@ -74,7 +74,11 @@ if(isset($_GET['userId'])){
 
             ?>
 
-            <?php foreach ($results as $row): ?>
+        <?php 
+            
+        try {
+                
+            foreach ($results as $row): ?>
                 <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 p-0">
                     <div class="border rounded-none border-8 border-solid border-gray-800 m-2">
                         <div class="card px-2 rounded-0 py-3 border-transparent" id="product-<?php echo htmlspecialchars($row['prodid']); ?>">
@@ -99,7 +103,13 @@ if(isset($_GET['userId'])){
                         </div>
                     </div>
                 </div>
-        <?php endforeach; ?>
+            <?php endforeach; 
+        }catch(PDOException $e){
+            // Handle the exception
+            echo 'Caught exception: ',  $e->getMessage();
+        }
+
+        ?>
 
     </div>
 </section>
