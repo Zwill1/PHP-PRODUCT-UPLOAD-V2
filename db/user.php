@@ -48,9 +48,23 @@ if(isset($_GET['userId'])){
     </div>
     <div class="mb-3 row">
         <div>
-            <p>User: <?php echo htmlspecialchars($row['username']); ?></p>
+            <?php 
+                try {
+                    ?>
+                        <p>User: <?php echo htmlspecialchars($row['username']); ?></p>
+                        <p>Contact Seller: <a href="mailto:<?php echo htmlspecialchars($row['email']); ?>"><?php echo htmlspecialchars($row['email']); ?></a></p>
+                        <p>User Joined: <?php echo $readableDate; ?></p>
+                        <?php
+                }catch(PDOException $e){
+                    // Handle the exception
+                    echo 'Caught exception: ',  $e->getMessage();
+                }
+            ?>
+
+            <!-- <p>User: <?php echo htmlspecialchars($row['username']); ?></p>
             <p>Contact Seller: <a href="mailto:<?php echo htmlspecialchars($row['email']); ?>"><?php echo htmlspecialchars($row['email']); ?></a></p>
-            <p>User Joined: <?php echo $readableDate; ?></p>
+            <p>User Joined: <?php echo $readableDate; ?></p> -->
+            
         </div>
     </div>
 <?php } ?>
