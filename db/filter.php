@@ -2,7 +2,7 @@
 <?php include "../assets/header.php" ?>
 <?php include "../assets/hero.php" ?>
 
-<div class="container">
+<div class="container mt-5 mb-5">
     <!-- <section class="row mt-5 mb-2">
         <h1 class="fw-bold text-center">Filtered Products for <?php echo $categories ?></h1>
     </section> -->
@@ -31,7 +31,7 @@
             // print_r($categories);
 
             foreach ($categories as $category) {
-                echo '<section class="row mt-5 mb-2">';
+                echo '<section class="row mb-2">';
                     echo '<h1 class="fw-bold text-center">Filtered Products for ' . $category . '</h1>';
                 echo '</section>';
 
