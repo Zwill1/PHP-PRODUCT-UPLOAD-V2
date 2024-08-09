@@ -18,7 +18,7 @@
 
 <?php $loggedInID = $_SESSION["user_id"]; ?>
 
-<div class="container-fluid pt-5 px-0">
+<div class="container-fluid mt-5 mb-5 px-0">
     <div class="row mx-0">
         <div class="col-lg-12 col-xl-3">
             <nav class="nav flex-column">
@@ -147,6 +147,7 @@
             </form>
         </div>
     </div>
+</div>
     <!-- Modal -->
 
 <?php include "../../assets/footer.php" ?>
