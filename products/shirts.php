@@ -4,8 +4,8 @@
 
 <?php include '../assets/components/iconbar.php' ?>
 
-<div class="container">
-    <section class="row mt-5 mb-2">
+<div class="container mt-5 mb-5">
+    <section class="row mb-2">
         <h1 class="fw-bold text-center">Shop Shirts</h1>
     </section>
     <section class="row">
