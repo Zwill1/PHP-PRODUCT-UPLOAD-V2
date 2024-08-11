@@ -55,7 +55,7 @@
 
             // Check if items with product tag were found
             if ($rowCount === 0) {
-                echo "There were no results for this product tags.";
+                echo "<p class='text-center'>There were no results for this product tags.</p>";
             }
 
         }catch(PDOException $e){
