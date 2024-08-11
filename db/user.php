@@ -51,9 +51,9 @@ if(isset($_GET['userId'])){
             <?php 
                 try {
                     ?>
-                        <p>User: <?php echo htmlspecialchars($row['username']); ?></p>
-                        <p>Contact Seller: <a href="mailto:<?php echo htmlspecialchars($row['email']); ?>"><?php echo htmlspecialchars($row['email']); ?></a></p>
-                        <p>User Joined: <?php echo $readableDate; ?></p>
+                        <p><span class="fw-bold">User:</span> <?php echo htmlspecialchars($row['username']); ?></p>
+                        <p><span class="fw-bold">Contact Seller:</span> <a href="mailto:<?php echo htmlspecialchars($row['email']); ?>"><?php echo htmlspecialchars($row['email']); ?></a></p>
+                        <p><span class="fw-bold">User Joined:</span> <?php echo $readableDate; ?></p>
                         <?php
                 }catch(PDOException $e){
                     // Handle the exception
