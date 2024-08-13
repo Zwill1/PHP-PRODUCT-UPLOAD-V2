@@ -17,6 +17,7 @@ $GLOBAL_URL = $_SERVER['REQUEST_URI'];
       <button class="navbar-toggler border border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobile" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+<!--
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
           <li class="nav-item">
@@ -30,10 +31,10 @@ $GLOBAL_URL = $_SERVER['REQUEST_URI'];
           </li>
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#">Contact</a>
-          </li>
+          </li>          
         </ul>
       </div>
-
+--> 
       <div class="d-none d-lg-block" id="navbarText">
         <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
 
@@ -48,14 +49,14 @@ $GLOBAL_URL = $_SERVER['REQUEST_URI'];
             echo '}';
             echo '</script>';
           ?>
-
+<!--
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#"><i class="ri-search-line"></i></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#"><i class="ri-shopping-cart-fill"></i></a>
           </li>
-
+-->
           <?php
             // Check if local storage has a specific value
             echo '<script>';
@@ -93,6 +94,7 @@ $GLOBAL_URL = $_SERVER['REQUEST_URI'];
       <!-- START Mobile Nav -->
       <div class="collapse navbar-collapse" id="navbarMobile">
         <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
+<!--          
           <li class="nav-item">
             <a class="nav-link <?php echo ($_SERVER['REQUEST_URI'] == $GLOBAL_URL) ? 'active' : '' ?>" aria-current="page" href="http://localhost/PHP-PRODUCT-UPLOAD-v2/">Home</a>
           </li>
@@ -105,6 +107,7 @@ $GLOBAL_URL = $_SERVER['REQUEST_URI'];
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#">Contact</a>
           </li>
+-->
           <?php
             // Check if local storage has a specific value
             echo '<script>';
@@ -116,12 +119,14 @@ $GLOBAL_URL = $_SERVER['REQUEST_URI'];
             echo '}';
             echo '</script>';
           ?>
+<!--
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#"><i class="ri-search-line"></i></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#"><i class="ri-shopping-cart-fill"></i></a>
           </li>
+-->
           <?php
             // Check if local storage has a specific value
             echo '<script>';
