@@ -1,4 +1,4 @@
-# PHP Product Upload Version 2.5.1
+# Product Uploader Version 2.5.1
 
 ## Objective
 
